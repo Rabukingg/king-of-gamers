@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>King of Gamers TCG · El imperio del juego</title>
+<meta name="description" content="King of Gamers TCG: tienda chilena de Pokémon, Magic, Yu-Gi-Oh! y One Piece. Cartas individuales, sobres, booster boxes, preventas y accesorios. Despacho a todo Chile y retiro en tienda.">
+<meta property="og:title" content="King of Gamers TCG · El imperio del juego">
+<meta property="og:description" content="Cartas, sobres, cajas selladas, preventas y accesorios TCG con despacho a todo Chile.">
+<meta property="og:image" content="logo.jpg">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"King of Gamers TCG","slogan":"El imperio del juego","currenciesAccepted":"CLP","areaServed":"CL","image":"logo.jpg"}</script>
+<style>
+:root{--bg:#1e1743;--bg2:#171236;--panel:#272058;--panel2:#312a6e;--line:rgba(255,255,255,.12);--pink:#ff2d95;--cyan:#22c8ff;--gold:#ffc83d;--orange:#ff8a1f;--text:#f5f3ff;--muted:#b0aadc;--ok:#3ddc97;--bad:#ff5c7a;--r:14px;--hf:'Chakra Petch',system-ui,sans-serif;--bf:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.5 var(--bf);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(900px 500px at 85% -10%,rgba(255,45,149,.18),transparent 60%),radial-gradient(800px 500px at -10% 10%,rgba(34,200,255,.14),transparent 60%),var(--bg)}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--hf);margin:0;letter-spacing:.2px}
+h1{font-size:clamp(26px,5vw,38px)} h2{font-size:clamp(20px,3.6vw,28px)} h3{font-size:18px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
+.topbar{background:linear-gradient(90deg,var(--pink),var(--orange));color:#1a0f2e;font-weight:700;font-size:13px;text-align:center;padding:6px 10px}
+header.hd{position:sticky;top:0;z-index:30;background:rgba(23,18,54,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd-in{display:flex;align-items:center;gap:14px;padding:10px 16px;max-width:1240px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand img{width:52px;height:52px;border-radius:12px;object-fit:cover;box-shadow:0 0 0 2px rgba(255,200,61,.5)}
+.brand b{font-family:var(--hf);font-size:18px;line-height:1.05;letter-spacing:.5px}
+.brand b span{display:block;font-size:11px;color:var(--gold);letter-spacing:2px}
+.sbox{flex:1;display:flex;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.sbox input{flex:1;min-width:0;background:none;border:0;padding:10px 16px;outline:none}
+.sbox button{background:var(--pink);border:0;padding:0 18px;font-weight:700;cursor:pointer;color:#fff}
+.hbtns{display:flex;gap:8px;flex-shrink:0}
+.ibtn{position:relative;display:flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:9px 14px;cursor:pointer;font-weight:600;white-space:nowrap;transition:.2s}
+.ibtn:hover{border-color:var(--cyan);transform:translateY(-1px)}
+.ibtn .n{background:var(--gold);color:#1a0f2e;border-radius:999px;font-size:12px;font-weight:800;min-width:20px;height:20px;display:grid;place-items:center;padding:0 5px}
+nav.nv{border-top:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+nav.nv::-webkit-scrollbar{display:none}
+nav.nv .in{display:flex;gap:2px;max-width:1240px;margin:0 auto;padding:0 12px;white-space:nowrap}
+nav.nv a{padding:10px 12px;font-weight:600;font-size:14px;color:var(--muted);border-bottom:2px solid transparent;transition:.2s}
+nav.nv a:hover,nav.nv a.on{color:#fff;border-color:var(--pink)}
+nav.nv a.hot{color:var(--gold)}
+main#app{min-height:60vh;animation:fade .35s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.sec{padding:30px 0 6px}
+.sec-h{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-bottom:14px}
+.sec-h a{color:var(--cyan);font-weight:700;font-size:14px}
+.sec-h p{margin:2px 0 0;color:var(--muted)}
+.hero{position:relative;margin:18px 0 0;border-radius:22px;overflow:hidden;min-height:340px;border:1px solid var(--line)}
+.slide{position:absolute;inset:0;display:flex;align-items:center;padding:34px clamp(18px,5vw,56px);gap:24px;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s}
+.slide.on{opacity:1;visibility:visible}
+.slide .tx{flex:1;max-width:560px;position:relative;z-index:2}
+.slide .tag{display:inline-block;background:rgba(0,0,0,.35);border:1px solid var(--line);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+.slide h1{margin:12px 0 8px;line-height:1.05}
+.slide p{color:#e6e2ff;margin:0 0 18px;max-width:46ch}
+.slide .vis{flex:0 0 auto;width:min(300px,34vw);position:relative;z-index:1}
+.slide .vis img{width:100%;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.45);animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px;z-index:5}
+.dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.4);cursor:pointer;padding:0}
+.dots button.on{background:var(--gold);width:26px;border-radius:9px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;border:0;border-radius:999px;padding:11px 22px;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .2s;box-shadow:0 6px 18px rgba(255,45,149,.3)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,45,149,.4)}
+.btn:disabled{background:var(--panel2);color:var(--muted);box-shadow:none;cursor:not-allowed;transform:none}
+.btn.alt{background:var(--panel2);box-shadow:none;border:1px solid var(--line)}
+.btn.ghost{background:none;border:1px solid var(--line);box-shadow:none}
+.btn.sm{padding:6px 14px;font-size:13px}
+.btn.danger{background:var(--bad);box-shadow:none}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.tile{position:relative;border-radius:var(--r);padding:18px;min-height:110px;overflow:hidden;border:1px solid var(--line);transition:transform .2s,border-color .2s;display:flex;flex-direction:column;justify-content:flex-end}
+.tile:hover{transform:translateY(-4px);border-color:var(--gold)}
+.tile b{font-family:var(--hf);font-size:18px;position:relative}
+.tile small{color:#ece9ff;opacity:.85;position:relative}
+.tile::after{content:"";position:absolute;right:-20px;top:-20px;width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.14)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:14px}
+.pcard{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.35);border-color:rgba(255,200,61,.5)}
+.art{position:relative;display:block;aspect-ratio:5/6;background:var(--bg2)}
+.art svg,.art img{width:100%;height:100%;display:block;object-fit:contain}
+.badges{position:absolute;left:8px;top:8px;display:flex;flex-direction:column;gap:4px;align-items:flex-start}
+.bd{font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.5px;text-transform:uppercase}
+.bd.off{background:var(--pink)} .bd.pre{background:var(--cyan);color:#06243a} .bd.new{background:var(--gold);color:#241a00} .bd.out{background:#444;color:#ddd}
+.fav{position:absolute;right:8px;top:8px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(20,14,50,.7);color:#fff;cursor:pointer;font-size:16px;transition:.2s}
+.fav:hover{transform:scale(1.12)} .fav.on{color:var(--pink)}
+.pinfo{padding:12px;display:flex;flex-direction:column;gap:3px;flex:1}
+.meta{font-size:12px;color:var(--muted)}
+.pname{font-weight:700;line-height:1.25;min-height:2.5em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pname:hover{color:var(--gold)}
+.price{display:flex;align-items:baseline;gap:8px;margin-top:4px}
+.price b{font-family:var(--hf);font-size:20px;color:var(--gold)}
+.price s{color:var(--muted);font-size:13px}
+.stock{font-size:12px;font-weight:600}.stock.ok{color:var(--ok)}.stock.low{color:var(--orange)}.stock.no{color:var(--bad)}
+.pcard .add{margin-top:8px;width:100%}
+.scroller{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+.scroller .pcard{flex:0 0 200px;scroll-snap-align:start;min-width:0}
+.info3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.box h3{margin-bottom:8px;color:var(--gold)}
+.box ul{margin:0;padding-left:18px;color:#ddd9ff}
+.evs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.ev{display:flex;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px;align-items:center}
+.ev .dt{flex:0 0 58px;text-align:center;background:linear-gradient(160deg,var(--pink),var(--orange));border-radius:12px;padding:8px 0;font-family:var(--hf);line-height:1}
+.ev .dt b{display:block;font-size:24px}.ev .dt span{font-size:12px;letter-spacing:1px}
+.ev p{margin:2px 0 0;color:var(--muted);font-size:13px}
+footer{margin-top:50px;border-top:1px solid var(--line);background:var(--bg2);padding:28px 0 40px;color:var(--muted);font-size:14px}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+footer h4{margin:0 0 8px;color:#fff;font-family:var(--hf)}
+footer a{display:block;padding:2px 0}footer a:hover{color:var(--gold)}
+.crumbs{color:var(--muted);font-size:13px;padding:16px 0 6px}.crumbs a{color:var(--cyan)}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
+.bar select,.fld input,.fld select,.fld textarea,.in-s{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:9px 12px;outline:none;width:100%}
+.bar select{width:auto}
+.fld input:focus,.fld select:focus,.fld textarea:focus,.in-s:focus{border-color:var(--cyan)}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}
+.chip.on{background:var(--pink);border-color:var(--pink)}
+.srch{display:grid;grid-template-columns:290px 1fr;gap:18px;align-items:start}
+.filters{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:11px;position:sticky;top:130px}
+.fld label{display:block;font-size:12px;color:var(--muted);margin-bottom:3px;font-weight:600;text-transform:uppercase;letter-spacing:.6px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pdp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;margin-top:10px}
+.pdp .art{border-radius:20px;border:1px solid var(--line);aspect-ratio:1/1.05}
+.pdp .price b{font-size:32px}
+.spec{width:100%;border-collapse:collapse;margin:14px 0}
+.spec td{padding:7px 0;border-bottom:1px solid var(--line)}.spec td:first-child{color:var(--muted);width:42%}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--bg2)}
+.qty button{width:36px;height:36px;border:0;background:none;cursor:pointer;font-size:18px}
+.qty button:hover{background:var(--panel2)}
+.qty span{min-width:34px;text-align:center;font-weight:700}
+.cart{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:20px;align-items:start;margin-top:12px}
+.line{display:grid;grid-template-columns:70px minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:10px;margin-bottom:10px}
+.line .art{aspect-ratio:1;border-radius:10px;overflow:hidden}
+.line .lt{text-align:right}
+.sum{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;position:sticky;top:130px}
+.sum .r{display:flex;justify-content:space-between;padding:5px 0}
+.sum .t{font-family:var(--hf);font-size:22px;border-top:1px solid var(--line);margin-top:8px;padding-top:12px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--line);border-radius:12px;margin:6px 0;cursor:pointer}
+.opt:has(input:checked){border-color:var(--gold);background:rgba(255,200,61,.07)}
+.opt input{margin-top:4px;accent-color:var(--pink)}
+.form2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form2 .full{grid-column:1/-1}
+.msg{padding:10px 14px;border-radius:10px;margin:10px 0;font-size:14px}
+.msg.ok{background:rgba(61,220,151,.12);border:1px solid var(--ok)}.msg.bad{background:rgba(255,92,122,.12);border:1px solid var(--bad)}.msg.info{background:rgba(34,200,255,.1);border:1px solid var(--cyan)}
+.empty{text-align:center;padding:50px 10px;color:var(--muted)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0;border-bottom:1px solid var(--line);padding-bottom:10px}
+.tabs button{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;font-weight:600}
+.tabs button.on{background:var(--pink);border-color:var(--pink)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border-radius:var(--r);overflow:hidden}
+.tbl th{background:var(--panel2);text-align:left;padding:9px 10px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);white-space:nowrap}
+.tbl td{padding:8px 10px;border-top:1px solid var(--line);vertical-align:middle}
+.tbl img,.tbl svg.th{width:38px;height:44px;object-fit:contain;border-radius:6px;background:var(--bg2);display:block}
+.tbl input.mini,.tbl select.mini{width:96px;padding:5px 8px;background:var(--bg2);border:1px solid var(--line);border-radius:8px}
+.tw{overflow-x:auto;border-radius:var(--r);border:1px solid var(--line)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:10px 0 18px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.kpi small{color:var(--muted)}.kpi b{display:block;font-family:var(--hf);font-size:26px;color:var(--gold)}
+.hbar{display:grid;grid-template-columns:130px 1fr 90px;gap:10px;align-items:center;margin:7px 0;font-size:14px}
+.hbar i{display:block;height:14px;border-radius:8px;background:linear-gradient(90deg,var(--pink),var(--orange));min-width:3px;transition:width .6s}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:700;background:var(--panel2)}
+.pill.ok{background:rgba(61,220,151,.2);color:var(--ok)}.pill.bad{background:rgba(255,92,122,.2);color:var(--bad)}.pill.warn{background:rgba(255,138,31,.2);color:var(--orange)}
+.steps{display:flex;gap:0;margin:16px 0}.steps div{flex:1;text-align:center;font-size:12px;color:var(--muted);position:relative;padding-top:24px}
+.steps div::before{content:"";position:absolute;top:6px;left:50%;width:14px;height:14px;border-radius:50%;background:var(--panel2);border:2px solid var(--line);transform:translateX(-50%);z-index:1}
+.steps div::after{content:"";position:absolute;top:12px;left:-50%;width:100%;height:2px;background:var(--line)}
+.steps div:first-child::after{display:none}
+.steps div.done{color:#fff}.steps div.done::before{background:var(--ok);border-color:var(--ok)}.steps div.done::after{background:var(--ok)}
+.ovl{position:fixed;inset:0;z-index:100;background:rgba(10,6,30,.75);display:grid;place-items:center;padding:14px;animation:fade .2s both}
+.mdl{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;width:min(640px,100%);max-height:92vh;overflow:auto}
+.mdl h2{margin-bottom:12px}
+.mdl .acts{display:flex;gap:8px;justify-content:flex-end;margin-top:16px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:200;background:#fff;color:#1a0f2e;font-weight:700;padding:11px 20px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.4);animation:fade .25s both;max-width:92vw}
+.paybox{text-align:center}.paybox .logo{font-family:var(--hf);font-size:26px;margin:6px 0 2px}
+.small{font-size:13px;color:var(--muted)}
+.right{text-align:right}.mt{margin-top:16px}
+@media(max-width:900px){.srch{grid-template-columns:1fr}.filters{position:static}.cart{grid-template-columns:1fr}.sum{position:static}.pdp{grid-template-columns:1fr}.slide .vis{display:none}}
+@media(max-width:640px){.hd-in{flex-wrap:wrap}.sbox{order:3;flex-basis:100%}.hbtns{margin-left:auto}.ibtn .lb{display:none}.ibtn{padding:9px 11px}.brand{flex:1;min-width:0}.brand img{width:44px;height:44px}.brand b{font-size:13px}.brand b span{font-size:9px;letter-spacing:1px}.form2{grid-template-columns:1fr}.hero{min-height:380px}.hbar{grid-template-columns:90px 1fr 70px}.scroller .pcard{flex-basis:165px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="topbar">🚚 Despacho a todo Chile · Envío gratis sobre $70.000 · 🏪 Retiro en tienda sin costo</div>
+<header class="hd">
+  <div class="hd-in">
+    <a class="brand" href="#inicio"><img src="logo.jpg" alt="King of Gamers TCG"><b>KING OF GAMERS<span>TCG · EL IMPERIO DEL JUEGO</span></b></a>
+    <form class="sbox" id="qs" role="search"><input id="qsi" type="search" placeholder="Busca cartas, sobres, cajas…" aria-label="Buscar"><button type="submit">Buscar</button></form>
+    <div class="hbtns">
+      <a class="ibtn" href="#cuenta" id="accBtn">👤 <span class="lb">Cuenta</span></a>
+      <a class="ibtn" href="#carrito">🛒 <span class="lb">Carrito</span> <span class="n" id="cartN">0</span></a>
+    </div>
+  </div>
+  <nav class="nv"><div class="in" id="nav"></div></nav>
+</header>
+<main id="app"></main>
+<footer><div class="wrap"><div class="cols">
+  <div><h4>King of Gamers TCG</h4><p>Tu tienda de Trading Card Games en Chile. Cartas, sellado y accesorios para jugadores y coleccionistas.</p></div>
+  <div><h4>Tienda</h4><a href="#cartas">Buscador de cartas</a><a href="#tienda-preventas">Preventas</a><a href="#tienda-ofertas">Ofertas</a><a href="#eventos">Eventos y torneos</a></div>
+  <div><h4>Ayuda</h4><a href="#envios">Envíos y medios de pago</a><a href="#seguimiento">Seguimiento de pedido</a><a href="#cuenta">Mi cuenta</a></div>
+  <div><h4>Admin</h4><a href="#admin">Panel administrativo</a><p class="small">Precios en CLP, IVA incluido. Productos de demostración.</p></div>
+</div></div></footer>
+
+<script>
+/* ============ Utilidades ============ */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CLP=n=>'$'+Math.round(Number(n)||0).toLocaleString('es-CL');
+const norm=s=>String(s??'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const fdate=iso=>new Date(iso).toLocaleDateString('es-CL',{day:'2-digit',month:'short',year:'numeric'});
+async function sha(s){try{const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('kog:'+s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}catch(e){return 'x'+btoa(unescape(encodeURIComponent(s)))}}
+function toast(m){$$('.toast').forEach(t=>t.remove());const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2600)}
+function modal(html){closeModal();const o=document.createElement('div');o.className='ovl';o.id='ovl';o.innerHTML=`<div class="mdl" role="dialog" aria-modal="true">${html}</div>`;o.addEventListener('mousedown',e=>{if(e.target===o)closeModal()});document.body.appendChild(o)}
+function closeModal(){const o=$('#ovl');if(o)o.remove()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+/* ============ Catálogos ============ */
+const GAMES={pokemon:{name:'Pokémon TCG',c1:'#ffcb05',c2:'#ef4136'},magic:{name:'Magic: The Gathering',c1:'#8b5cf6',c2:'#1e1b4b'},yugioh:{name:'Yu-Gi-Oh!',c1:'#f59e0b',c2:'#7c2d12'},onepiece:{name:'One Piece Card Game',c1:'#ef4444',c2:'#0e7490'},otros:{name:'Otros juegos de cartas',c1:'#22c8ff',c2:'#ff2d95'}};
+const CATS={cartas:'Cartas individuales',sobres:'Sobres y booster packs',boosterbox:'Booster boxes',etb:'Elite Trainer Boxes',colecciones:'Colecciones especiales',accesorios:'Accesorios',protectores:'Protectores y carpetas'};
+const RAR=['Común','Poco común','Rara','Súper rara','Ultra rara','Secreta'];
+const LANGS=['Español','Inglés','Japonés'];
+const REGIONES=['Arica y Parinacota','Tarapacá','Antofagasta','Atacama','Coquimbo','Valparaíso','Metropolitana de Santiago',"O'Higgins",'Maule','Ñuble','Biobío','La Araucanía','Los Ríos','Los Lagos','Aysén','Magallanes'];
+const FREE_SHIP=70000;
+const ORDER_STATES=['Pagado','Preparando','Enviado','Listo para retiro','Entregado','Cancelado'];
+const EVENTS=[
+ {d:'06',m:'DIC',t:'Torneo Pokémon · Liga Local',p:'Formato Estándar · Cupos limitados · Inscripción en tienda'},
+ {d:'13',m:'DIC',t:'Prerelease One Piece Card Game',p:'Kit de prerelease + premios por participación'},
+ {d:'20',m:'DIC',t:'Commander Night · Magic',p:'Mesas libres, mazos casuales y sorteo de sobres'},
+ {d:'10',m:'ENE',t:'Torneo Yu-Gi-Oh! Locals',p:'Formato Advanced · Premios en producto sellado'}
+];
+
+/* ============ Datos de demostración ============ */
+function mk(i,name,game,category,set,setCode,rarity,lang,number,cardType,price,oldPrice,stock,sold,o={}){
+  return Object.assign({id:'p'+i,name,game,category,type:category==='cartas'?'carta':(category==='accesorios'||category==='protectores'?'accesorio':'sellado'),set,setCode,rarity,lang,number,cardType,price,oldPrice,stock,sold,desc:'',preorder:false,releaseDate:'',featured:false,isNew:false,image:''},o)
+}
+function seed(){
+  let n=0;const P=[];const a=(...x)=>P.push(mk(++n,...x));
+  a('Booster Box Obsidian Flames (36 sobres)','pokemon','boosterbox','Obsidian Flames','OBF','','Inglés','','',89990,99990,8,42,{desc:'Caja sellada de 36 sobres. Producto original sellado de fábrica.',featured:true});
+  a('Elite Trainer Box Temporal Forces','pokemon','etb','Temporal Forces','TEF','','Español','','',54990,0,12,57,{desc:'Incluye 9 sobres, dados, marcadores, protectores y caja de almacenamiento.',featured:true,isNew:true});
+  a('Sobre Paldea Evolved','pokemon','sobres','Paldea Evolved','PAL','','Español','','',4990,0,120,210,{desc:'Sobre individual de 10 cartas.'});
+  a('Colección Premium Charizard ex','pokemon','colecciones','Colección Especial','SPC','','Inglés','','',39990,44990,6,23,{desc:'Carta promocional, pin, sobres de refuerzo y accesorios.',featured:true});
+  a('Play Booster Box Bloomburrow','magic','boosterbox','Bloomburrow','BLB','','Inglés','','',139990,0,5,18,{desc:'Caja de Play Boosters sellada.',featured:true});
+  a('Sobre Play Booster Modern Horizons 3','magic','sobres','Modern Horizons 3','MH3','','Inglés','','',8990,0,60,95,{desc:'Sobre individual Play Booster.'});
+  a('Commander Deck Murders at Karlov Manor','magic','colecciones','Murders at Karlov Manor','MKM','','Inglés','','',44990,49990,9,31,{desc:'Mazo Commander preconstruido de 100 cartas.'});
+  a('Booster Box Phantom Nightmare','yugioh','boosterbox','Phantom Nightmare','PHNI','','Inglés','','',74990,0,7,26,{desc:'Caja de 24 sobres.',isNew:true});
+  a('Sobre Legacy of Destruction','yugioh','sobres','Legacy of Destruction','LEDE','','Inglés','','',3490,0,90,160,{desc:'Sobre individual de 9 cartas.'});
+  a('Structure Deck Fire Kings','yugioh','colecciones','Structure Deck','SDFK','','Inglés','','',19990,22990,14,34,{desc:'Mazo listo para jugar con 41 cartas.'});
+  a('Booster Box Romance Dawn (OP01)','onepiece','boosterbox','Romance Dawn','OP01','','Inglés','','',119990,0,3,15,{desc:'Caja de 24 sobres de la primera expansión.',featured:true});
+  a('Sobre Awakening of the New Era (OP05)','onepiece','sobres','Awakening of the New Era','OP05','','Inglés','','',3990,0,150,240,{desc:'Sobre individual de 6 cartas.',isNew:true});
+  a('Starter Deck ST-01 Straw Hat Crew','onepiece','colecciones','Starter Deck','ST01','','Inglés','','',14990,17990,20,61,{desc:'Mazo de inicio de 51 cartas.'});
+  a('Booster Box Próxima Expansión Pokémon (Preventa)','pokemon','boosterbox','Próxima expansión','PRE1','','Español','','',94990,0,30,0,{preorder:true,releaseDate:'2026-12-12',desc:'Reserva tu caja. Cupos limitados, entrega desde la fecha de lanzamiento.',isNew:true});
+  a('One Piece Booster Box (Preventa)','onepiece','boosterbox','Próxima expansión','OPNX','','Inglés','','',124990,0,25,0,{preorder:true,releaseDate:'2027-01-16',desc:'Preventa de la próxima expansión. Cupos limitados.'});
+  a('Magic Collector Booster Box (Preventa)','magic','boosterbox','Próxima expansión','MTGN','','Inglés','','',289990,0,10,0,{preorder:true,releaseDate:'2027-02-06',desc:'Preventa de caja de Collector Boosters.'});
+  a('Charizard ex','pokemon','cartas','Obsidian Flames','OBF','Ultra rara','Inglés','125/197','Pokémon',24990,29990,3,40,{desc:'Carta en condición Near Mint.',featured:true});
+  a('Pikachu ex','pokemon','cartas','Surging Sparks','SSP','Ultra rara','Inglés','057/191','Pokémon',12990,0,5,38,{desc:'Carta en condición Near Mint.'});
+  a('Mew ex','pokemon','cartas','151','MEW','Súper rara','Español','151/165','Pokémon',6990,0,9,29,{});
+  a('Gardevoir ex','pokemon','cartas','Scarlet & Violet','SVI','Súper rara','Español','086/198','Pokémon',4990,0,11,33,{});
+  a('Professor’s Research','pokemon','cartas','Scarlet & Violet','SVI','Poco común','Español','189/198','Entrenador',990,0,40,80,{});
+  a('Lightning Bolt','magic','cartas','Modern Horizons 3','MH3','Rara','Inglés','0120','Instantáneo',3990,0,18,66,{});
+  a('Sol Ring','magic','cartas','Commander Masters','CMM','Poco común','Inglés','0410','Artefacto',5990,6990,12,90,{});
+  a('The One Ring','magic','cartas','Tales of Middle-earth','LTR','Ultra rara','Inglés','0246','Artefacto',69990,0,1,12,{featured:true});
+  a('Ragavan, Nimble Pilferer','magic','cartas','Modern Horizons 2','MH2','Ultra rara','Inglés','0138','Criatura',34990,39990,2,20,{});
+  a('Blue-Eyes White Dragon','yugioh','cartas','Legend of Blue Eyes White Dragon','LOB','Ultra rara','Inglés','LOB-EN001','Monstruo',29990,0,2,17,{featured:true});
+  a('Dark Magician','yugioh','cartas','Starter Deck: Yugi','SDY','Súper rara','Inglés','SDY-006','Monstruo',9990,0,4,22,{});
+  a('Ash Blossom & Joyous Spring','yugioh','cartas','Maximum Crisis','MACR','Secreta','Inglés','MACR-EN036','Monstruo',7990,0,15,74,{});
+  a('Pot of Prosperity','yugioh','cartas','Genesis Impact','GEIM','Súper rara','Inglés','GEIM-EN061','Mágica',4990,0,10,25,{});
+  a('Monkey D. Luffy (Líder)','onepiece','cartas','Romance Dawn','OP01','Rara','Inglés','OP01-003','Líder',5990,0,8,44,{});
+  a('Roronoa Zoro','onepiece','cartas','Romance Dawn','OP01','Súper rara','Inglés','OP01-025','Personaje',8990,0,6,36,{});
+  a('Portgas D. Ace','onepiece','cartas','Paramount War','OP02','Súper rara','Inglés','OP02-013','Personaje',14990,0,3,28,{});
+  a('Shanks','onepiece','cartas','Romance Dawn','OP01','Secreta','Inglés','OP01-120','Personaje',79990,89990,1,9,{});
+  a('Disney Lorcana · Sobre The First Chapter','otros','sobres','The First Chapter','TFC','','Inglés','','',5490,0,48,52,{desc:'Sobre individual de 12 cartas.'});
+  a('Digimon Card Game · Starter Deck','otros','colecciones','Starter Deck','DGM','','Inglés','','',12990,0,13,19,{});
+  a('Dragon Ball Super Fusion World · Booster Box','otros','boosterbox','Fusion World','FW01','','Inglés','','',64990,69990,4,14,{isNew:true});
+  a('Protectores Matte Standard (100 un.)','otros','protectores','Accesorio','—','','—','','',8990,0,40,120,{desc:'Protectores de tamaño estándar, acabado mate.'});
+  a('Protectores Japanese Size (60 un.)','otros','protectores','Accesorio','—','','—','','',5990,0,28,70,{desc:'Ideal para Yu-Gi-Oh! y One Piece.'});
+  a('Carpeta 9 bolsillos (360 cartas)','otros','protectores','Accesorio','—','','—','','',16990,19990,15,41,{desc:'Carpeta con cierre y páginas reforzadas.'});
+  a('Deck Box Premium 100+','otros','accesorios','Accesorio','—','','—','','',12990,0,22,48,{desc:'Caja rígida con imán para 100+ cartas enfundadas.'});
+  a('Playmat King of Gamers Edición Logo','otros','accesorios','Accesorio','KOG','','—','','',14990,17990,18,35,{desc:'Playmat de goma 60×35 cm con el logo de la tienda.',featured:true,isNew:true});
+  a('Toploaders rígidos (25 un.)','otros','accesorios','Accesorio','—','','—','','',3990,0,60,88,{desc:'Para proteger tus cartas más valiosas.'});
+  return {v:1,products:P,orders:[],users:[],discounts:[
+    {code:'KING10',type:'pct',value:10,min:20000,active:true,uses:0},
+    {code:'BIENVENIDA',type:'pct',value:5,min:0,active:true,uses:0},
+    {code:'PREVENTA5000',type:'fix',value:5000,min:50000,active:true,uses:0}],
+   movements:[],cart:[],cartCode:'',ship:{method:'despacho',region:'Metropolitana de Santiago'},session:null,counter:10000};
+}
+
+/* ============ Persistencia (localStorage con respaldo en memoria) ============ */
+const KEY='kog_tcg_store_v1';
+function load(){try{const r=localStorage.getItem(KEY);if(r){const d=JSON.parse(r);if(d&&d.v===1)return d}}catch(e){}return null}
+let S=load()||seed();
+let saveWarned=false;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){if(!saveWarned){saveWarned=true;toast('No se pudo guardar en este navegador: los cambios durarán solo esta sesión.')}}}
+const prod=id=>S.products.find(p=>p.id===id);
+const me=()=>S.session?S.users.find(u=>u.id===S.session):null;
+
+/* ============ Arte SVG de productos ============ */
+function hashN(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h}
+function art(p,cls=''){
+  if(p.image&&String(p.image).startsWith('data:image/'))return `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">`;
+  const g=GAMES[p.game]||GAMES.otros,h=hashN(p.id+p.name),id='g'+(h%99999),r=h%4;
+  let body='';
+  const emb=`<g opacity=".9" transform="translate(125 ${p.type==='carta'?140:140})">${[ '<circle r="38" fill="none" stroke="#fff" stroke-width="5"/><circle r="14" fill="#fff"/>','<polygon points="0,-44 12,-14 44,-14 18,6 28,38 0,18 -28,38 -18,6 -44,-14 -12,-14" fill="#fff"/>','<rect x="-30" y="-30" width="60" height="60" transform="rotate(45)" fill="none" stroke="#fff" stroke-width="6"/><circle r="10" fill="#fff"/>','<path d="M0-42 38 28H-38Z" fill="none" stroke="#fff" stroke-width="6"/><circle cy="6" r="9" fill="#fff"/>'][r]}</g>`;
+  const lbl=t=>esc(String(t).slice(0,24));
+  if(p.type==='carta'){
+    const foil=['Ultra rara','Súper rara','Secreta'].includes(p.rarity);
+    body=`<rect x="38" y="10" width="174" height="280" rx="12" fill="#0d0a26" stroke="#ffd86b" stroke-width="3"/><rect x="48" y="20" width="154" height="260" rx="8" fill="url(#${id})"/>${emb.replace('translate(125 140)','translate(125 120)')}<rect x="56" y="196" width="138" height="30" rx="6" fill="rgba(0,0,0,.45)"/><text x="125" y="216" fill="#fff" font-size="13" font-weight="700" text-anchor="middle" font-family="sans-serif">${lbl(p.name)}</text><text x="125" y="250" fill="#fff" opacity=".85" font-size="11" text-anchor="middle" font-family="sans-serif">${esc(p.setCode||'')} ${esc(p.number||'')}</text><text x="125" y="268" fill="#ffd86b" font-size="10" text-anchor="middle" font-family="sans-serif">${esc((p.rarity||'').toUpperCase())}</text>${foil?`<polygon points="48,20 120,20 48,110" fill="#fff" opacity=".12"/><polygon points="202,280 130,280 202,190" fill="#fff" opacity=".1"/>`:''}`;
+  }else if(p.category==='sobres'){
+    body=`<path d="M70 28l10 8 10-8 10 8 10-8 10 8 10-8 10 8 10-8 10 8 10-8 10 8v10H70z" fill="#cfcfe8"/><rect x="70" y="42" width="110" height="222" fill="url(#${id})"/><path d="M70 264l10-8 10 8 10-8 10 8 10-8 10 8 10-8 10 8 10-8 10 8 10-8 10 8v8H70z" fill="#cfcfe8"/>${emb.replace('translate(125 140)','translate(125 125)')}<text x="125" y="205" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" font-family="sans-serif">${lbl(p.set)}</text><text x="125" y="223" fill="#ffd86b" font-size="10" text-anchor="middle" font-family="sans-serif">BOOSTER PACK</text>`;
+  }else if(['boosterbox','etb','colecciones'].includes(p.category)){
+    body=`<polygon points="40,70 190,70 215,45 65,45" fill="rgba(255,255,255,.35)"/><rect x="40" y="70" width="150" height="190" rx="6" fill="url(#${id})"/><polygon points="190,70 215,45 215,235 190,260" fill="rgba(0,0,0,.35)"/>${emb.replace('translate(125 140)','translate(115 130)')}<rect x="52" y="196" width="126" height="42" rx="6" fill="rgba(0,0,0,.5)"/><text x="115" y="213" fill="#fff" font-size="11" font-weight="700" text-anchor="middle" font-family="sans-serif">${lbl(p.set)}</text><text x="115" y="229" fill="#ffd86b" font-size="9" text-anchor="middle" font-family="sans-serif">${p.category==='etb'?'ELITE TRAINER BOX':p.category==='boosterbox'?'BOOSTER BOX':'COLECCIÓN'}</text>${p.preorder?'<rect x="40" y="70" width="150" height="22" fill="#22c8ff"/><text x="115" y="86" fill="#06243a" font-size="12" font-weight="800" text-anchor="middle" font-family="sans-serif">PREVENTA</text>':''}`;
+  }else{
+    body=`<rect x="45" y="50" width="160" height="200" rx="12" fill="url(#${id})"/><rect x="45" y="50" width="22" height="200" fill="rgba(0,0,0,.3)" rx="8"/>${[0,1,2].map(i=>`<rect x="${86+i*38}" y="${86}" width="30" height="42" rx="4" fill="rgba(255,255,255,.85)"/><rect x="${86+i*38}" y="${140}" width="30" height="42" rx="4" fill="rgba(255,255,255,.6)"/>`).join('')}<text x="125" y="226" fill="#fff" font-size="11" font-weight="700" text-anchor="middle" font-family="sans-serif">ACCESORIO</text>`;
+  }
+  return `<svg viewBox="0 0 250 300" role="img" aria-label="${esc(p.name)}"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${g.c1}"/><stop offset="1" stop-color="${g.c2}"/></linearGradient></defs>${body}</svg>`;
+}
+
+/* ============ Carrito y totales ============ */
+function cartLines(){return S.cart.map(c=>{const p=prod(c.id);return p?{p,qty:Math.min(c.qty,Math.max(p.stock,0))}:null}).filter(l=>l&&l.qty>0)}
+function shipCost(method,region,sub){if(method==='retiro'||!sub)return 0;if(sub>=FREE_SHIP)return 0;if(region==='Metropolitana de Santiago')return 3990;if(['Arica y Parinacota','Tarapacá','Aysén','Magallanes'].includes(region))return 8990;return 5990}
+function totals(){
+  const L=cartLines(),sub=L.reduce((s,l)=>s+l.p.price*l.qty,0);
+  const d=S.discounts.find(x=>x.code===S.cartCode&&x.active);let disc=0,err='';
+  if(S.cartCode&&!d)err='Código no válido o inactivo';
+  else if(d){if(sub<d.min)err=`Este código requiere una compra mínima de ${CLP(d.min)}`;else disc=d.type==='pct'?Math.round(sub*d.value/100):Math.min(d.value,sub)}
+  const ship=shipCost(S.ship.method,S.ship.region,sub-disc);
+  return {L,sub,disc,err,ship,total:sub-disc+ship,count:L.reduce((s,l)=>s+l.qty,0),code:d&&!err?d.code:''}
+}
+function addToCart(id,qty=1){
+  const p=prod(id);if(!p||p.stock<=0){toast('Producto sin stock');return}
+  const c=S.cart.find(x=>x.id===id),cur=c?c.qty:0,nq=Math.min(cur+qty,p.stock);
+  if(nq===cur){toast('Ya tienes el máximo disponible en tu carrito');return}
+  if(c)c.qty=nq;else S.cart.push({id,qty:nq});
+  save();badge();toast(nq<cur+qty?`Agregado (máximo disponible: ${p.stock})`:'Agregado al carrito ✓');
+}
+function badge(){const n=S.cart.reduce((s,c)=>s+c.qty,0);$('#cartN').textContent=n;const u=me();$('#accBtn').innerHTML='👤 <span class="lb">'+(u?esc(u.name.split(' ')[0]):'Cuenta')+'</span>'}
+
+/* ============ Componentes ============ */
+function stockInfo(p){if(p.stock<=0)return['no','Agotado'];if(p.stock<=3)return['low',`¡Últimas ${p.stock} unidades!`];return['ok',p.preorder?`Cupos: ${p.stock}`:`Stock: ${p.stock}`]}
+function isFav(id){const u=me();return !!(u&&u.favs.includes(id))}
+function card(p){
+  const disc=p.oldPrice>p.price?Math.round((1-p.price/p.oldPrice)*100):0,[sc,st]=stockInfo(p);
+  return `<article class="pcard"><a class="art" href="#producto-${esc(p.id)}">${art(p)}<div class="badges">${p.preorder?'<span class="bd pre">Preventa</span>':''}${disc?`<span class="bd off">-${disc}%</span>`:''}${p.isNew&&!p.preorder?'<span class="bd new">Nuevo</span>':''}${p.stock<=0?'<span class="bd out">Agotado</span>':''}</div></a><button class="fav ${isFav(p.id)?'on':''}" data-act="fav" data-id="${esc(p.id)}" aria-label="Favorito">♥</button><div class="pinfo"><div class="meta">${esc((GAMES[p.game]||{}).name)} · ${esc(p.lang)}</div><a class="pname" href="#producto-${esc(p.id)}">${esc(p.name)}</a><div class="meta">${esc(p.set)}${p.rarity?' · '+esc(p.rarity):''}</div><div class="price"><b>${CLP(p.price)}</b>${disc?`<s>${CLP(p.oldPrice)}</s>`:''}</div><div class="stock ${sc}">${esc(st)}</div><button class="btn add sm" data-act="add" data-id="${esc(p.id)}" ${p.stock<=0?'disabled':''}>${p.stock<=0?'Sin stock':p.preorder?'Reservar':'Agregar al carrito'}</button></div></article>`;
+}
+const row=(title,sub,key,list,n=8)=>list.length?`<section class="sec wrap"><div class="sec-h"><div><h2>${title}</h2><p>${sub}</p></div><a href="#tienda-${key}">Ver todo →</a></div><div class="scroller">${list.slice(0,n).map(card).join('')}</div></section>`:'';
+
+/* ============ Vistas ============ */
+let heroT=null;
+function viewHome(){
+  const P=S.products,cnt=k=>P.filter(p=>p.game===k).length;
+  const slides=[
+   {tag:'Bienvenido al imperio',h:'King of Gamers <span style="color:var(--gold)">TCG</span>',p:'Cartas, sobres y producto sellado de Pokémon, Magic, Yu-Gi-Oh! y One Piece. Despacho a todo Chile.',a:'#tienda-todo',b:'Ver tienda',img:true,bg:'linear-gradient(120deg,#1e1743,#3a1a6e 60%,#7a1d6a)'},
+   {tag:'Preventas abiertas',h:'Reserva los próximos lanzamientos',p:'Asegura tu caja antes del lanzamiento. Cupos limitados por expansión.',a:'#tienda-preventas',b:'Ver preventas',bg:'linear-gradient(120deg,#06243a,#0e6a93 60%,#1e1743)'},
+   {tag:'Ofertas especiales',h:'Hasta 15% OFF en sellado y accesorios',p:'Usa el código KING10 en compras sobre $20.000.',a:'#tienda-ofertas',b:'Ver ofertas',bg:'linear-gradient(120deg,#4a0f3d,#ff2d95 70%,#ff8a1f)'}];
+  return `<div class="wrap"><div class="hero" id="hero">${slides.map((s,i)=>`<div class="slide ${i?'':'on'}" style="background:${s.bg}"><div class="tx"><span class="tag">${s.tag}</span><h1>${s.h}</h1><p>${s.p}</p><a class="btn" href="${s.a}">${s.b} →</a></div>${s.img?'<div class="vis"><img src="logo.jpg" alt="King of Gamers TCG"></div>':''}</div>`).join('')}<div class="dots">${slides.map((_,i)=>`<button class="${i?'':'on'}" data-act="slide" data-i="${i}" aria-label="Banner ${i+1}"></button>`).join('')}</div></div></div>
+  <section class="sec wrap"><div class="sec-h"><div><h2>Elige tu juego</h2></div></div><div class="tiles">${Object.entries(GAMES).map(([k,g])=>`<a class="tile" href="#tienda-${k}" style="background:linear-gradient(145deg,${g.c1},${g.c2})"><b>${g.name}</b><small>${cnt(k)} productos</small></a>`).join('')}</div></section>
+  ${row('Productos destacados','Los favoritos de la casa','destacados',P.filter(p=>p.featured))}
+  ${row('Últimos lanzamientos','Lo más nuevo en tienda','nuevos',P.filter(p=>p.isNew))}
+  ${row('Más vendidos','Lo que más se llevan nuestros clientes','vendidos',[...P].sort((a,b)=>b.sold-a.sold))}
+  ${row('Ofertas especiales','Precios rebajados por tiempo limitado','ofertas',P.filter(p=>p.oldPrice>p.price))}
+  ${row('Preventas','Reserva ahora, recibe en el lanzamiento','preventas',P.filter(p=>p.preorder))}
+  ${row('Accesorios','Protege y organiza tu colección','accesorios',P.filter(p=>['accesorios','protectores'].includes(p.category)))}
+  <section class="sec wrap"><div class="sec-h"><div><h2>Eventos y torneos</h2><p>Juega en comunidad</p></div><a href="#eventos">Ver todos →</a></div><div class="evs">${EVENTS.slice(0,3).map(evCard).join('')}</div></section>
+  <section class="sec wrap"><div class="sec-h"><h2>Envíos y medios de pago</h2></div>${infoBoxes()}</section>`;
+}
+const evCard=e=>`<div class="ev"><div class="dt"><b>${e.d}</b><span>${e.m}</span></div><div><b>${esc(e.t)}</b><p>${esc(e.p)}</p></div></div>`;
+const infoBoxes=()=>`<div class="info3"><div class="box"><h3>🚚 Despacho nacional</h3><ul><li>Región Metropolitana: $3.990</li><li>Otras regiones: desde $5.990</li><li>Envío gratis en compras sobre ${CLP(FREE_SHIP)}</li><li>Preparamos tu pedido en 24–48 h hábiles</li></ul></div><div class="box"><h3>🏪 Retiro en tienda</h3><ul><li>Sin costo</li><li>Te avisamos por correo cuando esté listo</li><li>Presenta tu número de pedido</li></ul></div><div class="box"><h3>💳 Medios de pago</h3><ul><li>Webpay Plus (débito y crédito)</li><li>Mercado Pago</li><li>Flow</li><li>Precios en pesos chilenos, IVA incluido</li></ul></div></div>`;
+function startHero(){
+  clearInterval(heroT);const h=$('#hero');if(!h)return;let i=0;const go=n=>{i=n;$$('.slide',h).forEach((s,k)=>s.classList.toggle('on',k===n));$$('.dots button',h).forEach((s,k)=>s.classList.toggle('on',k===n))};
+  h._go=go;heroT=setInterval(()=>go((i+1)%$$('.slide',h).length),6500);
+}
+
+const SHOP_TITLES={todo:'Toda la tienda',ofertas:'Ofertas especiales',preventas:'Preventas',nuevos:'Últimos lanzamientos',destacados:'Productos destacados',vendidos:'Más vendidos'};
+let SORT='rel',SQ='';
+function viewShop(key){
+  const P=S.products;let list;
+  switch(key){case'todo':list=P;break;case'ofertas':list=P.filter(p=>p.oldPrice>p.price);break;case'preventas':list=P.filter(p=>p.preorder);break;case'nuevos':list=P.filter(p=>p.isNew);break;case'destacados':list=P.filter(p=>p.featured);break;case'vendidos':list=[...P].sort((a,b)=>b.sold-a.sold);break;default:list=GAMES[key]?P.filter(p=>p.game===key):CATS[key]?P.filter(p=>p.category===key):[]}
+  const title=SHOP_TITLES[key]||(GAMES[key]||{}).name||CATS[key]||'Tienda';
+  if(SQ){const q=norm(SQ);list=list.filter(p=>norm([p.name,p.set,p.setCode,p.number,p.rarity,p.cardType,(GAMES[p.game]||{}).name].join(' ')).includes(q))}
+  if(SORT==='asc')list=[...list].sort((a,b)=>a.price-b.price);else if(SORT==='desc')list=[...list].sort((a,b)=>b.price-a.price);else if(SORT==='az')list=[...list].sort((a,b)=>a.name.localeCompare(b.name,'es'));
+  document.title=title+' · King of Gamers TCG';
+  return `<div class="wrap"><div class="crumbs"><a href="#inicio">Inicio</a> / ${esc(title)}</div><h1>${esc(title)}</h1>
+  <div class="bar"><span class="small">${list.length} producto${list.length===1?'':'s'}</span>${SQ?`<span class="chip on" data-act="clearq">Búsqueda: ${esc(SQ)} ✕</span>`:''}<span style="flex:1"></span><select data-chg="sort" aria-label="Ordenar"><option value="rel" ${SORT==='rel'?'selected':''}>Relevancia</option><option value="asc" ${SORT==='asc'?'selected':''}>Precio: menor a mayor</option><option value="desc" ${SORT==='desc'?'selected':''}>Precio: mayor a menor</option><option value="az" ${SORT==='az'?'selected':''}>Nombre A–Z</option></select></div>
+  ${list.length?`<div class="grid">${list.map(card).join('')}</div>`:'<div class="empty"><h2>Sin resultados</h2><p>Prueba con otra búsqueda o categoría.</p></div>'}</div>`;
+}
+
+/* --- Buscador avanzado de cartas --- */
+let SF={game:'',q:'',set:'',code:'',num:'',rar:'',lang:'',type:'',min:'',max:'',avail:'',sort:'rel'};
+const singles=()=>S.products.filter(p=>p.type==='carta');
+function uniq(list,f){return [...new Set(list.map(f).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'es'))}
+function opts(vals,cur,all){return `<option value="">${all}</option>`+vals.map(v=>`<option ${v===cur?'selected':''} value="${esc(v)}">${esc(v)}</option>`).join('')}
+function viewSearch(){
+  document.title='Buscador de cartas · King of Gamers TCG';
+  return `<div class="wrap"><div class="crumbs"><a href="#inicio">Inicio</a> / Buscador de cartas</div><h1>Buscador avanzado de cartas</h1><p class="small">Combina todos los filtros que quieras. Busca por nombre, número de carta o código de expansión.</p>
+  <div class="srch mt"><form class="filters" id="sf" onsubmit="return false"><div class="fld"><label>Búsqueda rápida</label><input name="q" type="search" placeholder="Nombre, número o código…"></div><div class="fld"><label>Juego</label><select name="game"></select></div><div class="fld"><label>Expansión</label><select name="set"></select></div><div class="row2"><div class="fld"><label>Colección / código</label><input name="code" placeholder="OBF, MH3…"></div><div class="fld"><label>N° de carta</label><input name="num" placeholder="125/197"></div></div><div class="row2"><div class="fld"><label>Rareza</label><select name="rar"></select></div><div class="fld"><label>Idioma</label><select name="lang"></select></div></div><div class="fld"><label>Tipo de carta</label><select name="type"></select></div><div class="row2"><div class="fld"><label>Precio mín.</label><input name="min" type="number" min="0" step="500" placeholder="$"></div><div class="fld"><label>Precio máx.</label><input name="max" type="number" min="0" step="500" placeholder="$"></div></div><div class="fld"><label>Disponibilidad</label><select name="avail"><option value="">Todas</option><option value="in">En stock</option><option value="out">Agotadas</option></select></div><button type="button" class="btn ghost sm" data-act="sf-reset">Limpiar filtros</button></form>
+  <div><div class="bar"><span class="small" id="sres-n"></span><span style="flex:1"></span><select name="sort" id="ssort" aria-label="Ordenar"><option value="rel">Relevancia</option><option value="asc">Precio: menor a mayor</option><option value="desc">Precio: mayor a menor</option><option value="az">Nombre A–Z</option></select></div><div class="grid" id="sres"></div></div></div></div>`;
+}
+function sfFill(){
+  const f=$('#sf');if(!f)return;const all=singles(),byG=SF.game?all.filter(p=>p.game===SF.game):all;
+  f.game.innerHTML=`<option value="">Todos los juegos</option>`+Object.entries(GAMES).filter(([k])=>all.some(p=>p.game===k)).map(([k,g])=>`<option value="${k}" ${SF.game===k?'selected':''}>${g.name}</option>`).join('');
+  const ok=(v,list)=>list.includes(v)?v:'';
+  const sets=uniq(byG,p=>p.set),rars=RAR.filter(r=>byG.some(p=>p.rarity===r)),langs=uniq(byG,p=>p.lang),types=uniq(byG,p=>p.cardType);
+  SF.set=ok(SF.set,sets);SF.rar=ok(SF.rar,rars);SF.lang=ok(SF.lang,langs);SF.type=ok(SF.type,types);
+  f.set.innerHTML=opts(sets,SF.set,'Todas las expansiones');f.rar.innerHTML=opts(rars,SF.rar,'Todas las rarezas');f.lang.innerHTML=opts(langs,SF.lang,'Todos los idiomas');f.type.innerHTML=opts(types,SF.type,'Todos los tipos');
+  f.q.value=SF.q;f.code.value=SF.code;f.num.value=SF.num;f.min.value=SF.min;f.max.value=SF.max;f.avail.value=SF.avail;$('#ssort').value=SF.sort;
+}
+function sfRun(){
+  let L=singles();const q=norm(SF.q),c=norm(SF.code),n=norm(SF.num);
+  if(SF.game)L=L.filter(p=>p.game===SF.game);
+  if(q)L=L.filter(p=>norm(p.name).includes(q)||norm(p.number).includes(q)||norm(p.setCode).includes(q)||norm(p.set).includes(q));
+  if(SF.set)L=L.filter(p=>p.set===SF.set);
+  if(c)L=L.filter(p=>norm(p.setCode).includes(c));
+  if(n)L=L.filter(p=>norm(p.number).includes(n));
+  if(SF.rar)L=L.filter(p=>p.rarity===SF.rar);
+  if(SF.lang)L=L.filter(p=>p.lang===SF.lang);
+  if(SF.type)L=L.filter(p=>p.cardType===SF.type);
+  if(SF.min!=='')L=L.filter(p=>p.price>=Number(SF.min));
+  if(SF.max!=='')L=L.filter(p=>p.price<=Number(SF.max));
+  if(SF.avail==='in')L=L.filter(p=>p.stock>0);if(SF.avail==='out')L=L.filter(p=>p.stock<=0);
+  if(SF.sort==='asc')L.sort((a,b)=>a.price-b.price);else if(SF.sort==='desc')L.sort((a,b)=>b.price-a.price);else if(SF.sort==='az')L.sort((a,b)=>a.name.localeCompare(b.name,'es'));
+  $('#sres').innerHTML=L.length?L.map(card).join(''):'<div class="empty" style="grid-column:1/-1"><h3>No encontramos cartas con esos filtros</h3><p>Prueba quitando alguno.</p></div>';
+  $('#sres-n').textContent=`${L.length} carta${L.length===1?'':'s'} encontrada${L.length===1?'':'s'}`;
+}
+
+/* --- Ficha de producto --- */
+let PQ=1;
+function viewProduct(id){
+  const p=prod(id);if(!p)return `<div class="wrap empty"><h2>Producto no encontrado</h2><a class="btn" href="#tienda-todo">Volver a la tienda</a></div>`;
+  document.title=p.name+' · King of Gamers TCG';
+  const disc=p.oldPrice>p.price?Math.round((1-p.price/p.oldPrice)*100):0,[sc,st]=stockInfo(p);PQ=Math.min(PQ,Math.max(p.stock,1));
+  const rel=S.products.filter(x=>x.id!==p.id&&(x.set===p.set&&p.set!=='Accesorio'||x.game===p.game&&x.category===p.category)).slice(0,4);
+  const rows=[['Juego',(GAMES[p.game]||{}).name],['Categoría',CATS[p.category]],['Idioma',p.lang],['Expansión',p.set],['Código',p.setCode],['Rareza',p.rarity],['N° de carta',p.number],['Tipo',p.cardType]].filter(r=>r[1]&&r[1]!=='—');
+  return `<div class="wrap"><div class="crumbs"><a href="#inicio">Inicio</a> / <a href="#tienda-${esc(p.category)}">${esc(CATS[p.category])}</a> / ${esc(p.name)}</div>
+  <div class="pdp"><div class="art" style="position:relative">${art(p)}<div class="badges">${p.preorder?'<span class="bd pre">Preventa</span>':''}${disc?`<span class="bd off">-${disc}%</span>`:''}</div></div>
+  <div><h1>${esc(p.name)}</h1><div class="price"><b>${CLP(p.price)}</b>${disc?`<s>${CLP(p.oldPrice)}</s> <span class="pill warn">Ahorras ${CLP(p.oldPrice-p.price)}</span>`:''}</div><div class="stock ${sc}" style="margin:6px 0">${esc(st)}</div>
+  ${p.preorder?`<div class="msg info">📅 Preventa · Lanzamiento estimado: <b>${esc(p.releaseDate?fdate(p.releaseDate+'T12:00:00'):'por confirmar')}</b>. Tu pedido se despacha desde esa fecha.</div>`:''}
+  <p>${esc(p.desc)||'Producto original.'}</p><table class="spec">${rows.map(r=>`<tr><td>${r[0]}</td><td>${esc(r[1])}</td></tr>`).join('')}</table>
+  ${p.stock>0?`<div class="bar"><div class="qty"><button data-act="pq" data-d="-1" aria-label="Menos">−</button><span id="pq">${PQ}</span><button data-act="pq" data-d="1" aria-label="Más">+</button></div><button class="btn" data-act="add-q" data-id="${esc(p.id)}">${p.preorder?'Reservar':'Agregar al carrito'}</button><button class="btn alt" data-act="fav" data-id="${esc(p.id)}">${isFav(p.id)?'♥ En favoritos':'♡ Favorito'}</button></div><p class="small">Máximo ${p.stock} por pedido (stock disponible).</p>`:'<div class="msg bad">Producto agotado.</div>'}
+  </div></div>${rel.length?`<section class="sec"><h2 style="margin-bottom:12px">Productos relacionados</h2><div class="grid">${rel.map(card).join('')}</div></section>`:''}</div>`;
+}
+
+/* --- Carrito --- */
+function viewCart(){
+  document.title='Carrito · King of Gamers TCG';const T=totals();
+  if(!T.L.length)return `<div class="wrap"><div class="empty"><h1>Tu carrito está vacío</h1><p>Agrega productos para comenzar.</p><a class="btn" href="#tienda-todo">Ir a la tienda</a></div></div>`;
+  const miss=FREE_SHIP-(T.sub-T.disc);
+  return `<div class="wrap"><div class="crumbs"><a href="#inicio">Inicio</a> / Carrito</div><h1>Tu carrito</h1><div class="cart"><div>${T.L.map(l=>`<div class="line"><a class="art" href="#producto-${esc(l.p.id)}">${art(l.p)}</a><div><a class="pname" style="min-height:0" href="#producto-${esc(l.p.id)}">${esc(l.p.name)}</a><div class="meta">${CLP(l.p.price)} c/u · ${esc(l.p.lang)}</div><div class="bar" style="margin:6px 0 0"><div class="qty"><button data-act="cq" data-id="${esc(l.p.id)}" data-d="-1" aria-label="Menos">−</button><span>${l.qty}</span><button data-act="cq" data-id="${esc(l.p.id)}" data-d="1" aria-label="Más">+</button></div><button class="btn ghost sm" data-act="crm" data-id="${esc(l.p.id)}">Eliminar</button></div></div><div class="lt"><b>${CLP(l.p.price*l.qty)}</b></div></div>`).join('')}</div>
+  <aside class="sum"><h3>Resumen</h3>
+  <div class="fld mt"><label>Código de descuento</label><div style="display:flex;gap:6px"><input id="codeIn" value="${esc(S.cartCode)}" placeholder="Ej: KING10" style="text-transform:uppercase"><button class="btn alt sm" data-act="code">Aplicar</button></div></div>
+  ${T.err?`<div class="msg bad">${esc(T.err)}</div>`:T.code?`<div class="msg ok">Código ${esc(T.code)} aplicado ✓</div>`:''}
+  <div class="mt"><label class="opt"><input type="radio" name="sm" value="despacho" data-chg="shipm" ${S.ship.method==='despacho'?'checked':''}><span><b>Despacho a domicilio</b><br><span class="small">Todo Chile</span></span></label><label class="opt"><input type="radio" name="sm" value="retiro" data-chg="shipm" ${S.ship.method==='retiro'?'checked':''}><span><b>Retiro en tienda</b><br><span class="small">Gratis</span></span></label></div>
+  ${S.ship.method==='despacho'?`<div class="fld"><label>Región de despacho</label><select data-chg="region">${REGIONES.map(r=>`<option ${r===S.ship.region?'selected':''}>${esc(r)}</option>`).join('')}</select></div>`:''}
+  <div class="mt"><div class="r"><span>Subtotal</span><span>${CLP(T.sub)}</span></div>${T.disc?`<div class="r" style="color:var(--ok)"><span>Descuento</span><span>−${CLP(T.disc)}</span></div>`:''}<div class="r"><span>Despacho</span><span>${S.ship.method==='retiro'?'Retiro gratis':T.ship?CLP(T.ship):'Gratis'}</span></div><div class="r t"><span>Total</span><span>${CLP(T.total)}</span></div></div>
+  ${S.ship.method==='despacho'&&miss>0?`<p class="small">Te faltan ${CLP(miss)} para envío gratis.</p>`:''}
+  <a class="btn" style="width:100%;margin-top:10px" href="#checkout">Ir a pagar →</a></aside></div></div>`;
+}
+
+/* --- Checkout --- */
+function viewCheckout(){
+  document.title='Pagar · King of Gamers TCG';const T=totals();
+  if(!T.L.length)return viewCart();
+  const u=me(),ad=u&&u.addrs[0]||{};
+  return `<div class="wrap"><div class="crumbs"><a href="#carrito">Carrito</a> / Datos y pago</div><h1>Finalizar compra</h1><div class="cart"><form id="coForm" data-form="checkout"><div class="box"><h3>Tus datos</h3><div class="form2"><div class="fld"><label>Nombre completo</label><input name="name" required value="${esc(u?u.name:'')}"></div><div class="fld"><label>Correo</label><input name="email" type="email" required value="${esc(u?u.email:'')}"></div><div class="fld"><label>Teléfono</label><input name="phone" required placeholder="+56 9 1234 5678" value="${esc(u&&u.phone||'')}"></div><div class="fld"><label>RUT (opcional)</label><input name="rut" placeholder="12.345.678-9"></div></div></div>
+  ${S.ship.method==='despacho'?`<div class="box mt"><h3>Dirección de despacho</h3><div class="form2"><div class="fld full"><label>Dirección</label><input name="address" required value="${esc(ad.address||'')}" placeholder="Calle, número, depto"></div><div class="fld"><label>Comuna</label><input name="comuna" required value="${esc(ad.comuna||'')}"></div><div class="fld"><label>Región</label><input value="${esc(S.ship.region)}" disabled></div></div></div>`:`<div class="msg info mt">🏪 Retirarás tu pedido en tienda. Te avisaremos por correo cuando esté listo.</div>`}
+  <div class="box mt"><h3>Medio de pago</h3>${[['Webpay Plus','Tarjetas de débito y crédito'],['Mercado Pago','Tarjetas, saldo y cuotas'],['Flow','Transferencia y tarjetas']].map((m,i)=>`<label class="opt"><input type="radio" name="pay" value="${m[0]}" ${i?'':'checked'}><span><b>${m[0]}</b><br><span class="small">${m[1]}</span></span></label>`).join('')}<p class="small">Estás en un entorno de demostración: el pago se simula en una pasarela de prueba.</p></div>
+  <div id="coErr"></div><button class="btn mt" type="submit" style="width:100%">Confirmar y pagar ${CLP(T.total)}</button></form>
+  <aside class="sum"><h3>Tu pedido</h3>${T.L.map(l=>`<div class="r"><span>${l.qty}× ${esc(l.p.name.slice(0,34))}</span><span>${CLP(l.p.price*l.qty)}</span></div>`).join('')}<div class="mt"><div class="r"><span>Subtotal</span><span>${CLP(T.sub)}</span></div>${T.disc?`<div class="r" style="color:var(--ok)"><span>Descuento (${esc(T.code)})</span><span>−${CLP(T.disc)}</span></div>`:''}<div class="r"><span>Despacho</span><span>${T.ship?CLP(T.ship):'Gratis'}</span></div><div class="r t"><span>Total</span><span>${CLP(T.total)}</span></div></div></aside></div></div>`;
+}
+let PENDING=null;
+function startPayment(f){
+  const T=totals();const err=[];
+  if(!T.L.length)err.push('Tu carrito está vacío.');
+  S.cart.forEach(c=>{const p=prod(c.id);if(!p||p.stock<c.qty)err.push(`Sin stock suficiente: ${p?p.name:'producto eliminado'}`)});
+  if(err.length){$('#coErr').innerHTML=`<div class="msg bad">${err.map(esc).join('<br>')}</div>`;return}
+  const d=new FormData(f);
+  PENDING={customer:{name:d.get('name').trim(),email:d.get('email').trim(),phone:d.get('phone').trim(),rut:(d.get('rut')||'').trim()},ship:{method:S.ship.method,region:S.ship.region,address:(d.get('address')||'').trim(),comuna:(d.get('comuna')||'').trim()},pay:d.get('pay'),T};
+  modal(`<div class="paybox"><h2>Pasarela de pago (simulada)</h2><div class="logo">${esc(PENDING.pay)}</div><p>Pagarás <b style="color:var(--gold);font-size:22px">${CLP(T.total)}</b> a King of Gamers TCG</p><p class="small">En producción, el cliente sería redirigido a ${esc(PENDING.pay)} y la tienda recibiría la confirmación directamente del proveedor (servidor a servidor) antes de dar el pedido por pagado.</p><div class="acts" style="justify-content:center"><button class="btn danger" data-act="pay-no">Rechazar pago</button><button class="btn" data-act="pay-ok">Aprobar pago</button></div></div>`);
+}
+function finishPayment(ok){
+  closeModal();if(!PENDING)return;const P=PENDING;PENDING=null;
+  if(!ok){toast('Pago rechazado. Tu carrito sigue intacto.');$('#coErr')&&($('#coErr').innerHTML='<div class="msg bad">El pago fue rechazado por la pasarela. Puedes intentarlo nuevamente.</div>');return}
+  // Revalidar stock en el momento de confirmar (evita vender sin stock)
+  const bad=P.T.L.find(l=>{const p=prod(l.p.id);return !p||p.stock<l.qty});
+  if(bad){$('#coErr').innerHTML=`<div class="msg bad">Se agotó el stock de "${esc(bad.p.name)}" mientras pagabas. Pago anulado; revisa tu carrito.</div>`;return}
+  const num='KG-'+(++S.counter),now=new Date().toISOString();
+  P.T.L.forEach(l=>{const p=prod(l.p.id);p.stock-=l.qty;p.sold+=l.qty;S.movements.unshift({id:uid(),date:now,pid:p.id,name:p.name,qty:-l.qty,note:'Venta '+num})});
+  const dc=S.discounts.find(x=>x.code===P.T.code);if(dc)dc.uses++;
+  const o={num,date:now,userId:S.session,customer:P.customer,ship:P.ship,items:P.T.L.map(l=>({id:l.p.id,name:l.p.name,price:l.p.price,qty:l.qty,game:l.p.game})),sub:P.T.sub,disc:P.T.disc,code:P.T.code,shipCost:P.T.ship,total:P.T.total,pay:{method:P.pay,status:'pagado',ref:uid().toUpperCase()},status:'Pagado'};
+  S.orders.unshift(o);S.cart=[];S.cartCode='';save();badge();go('pedido-'+num);
+}
+
+function timeline(o){
+  const flow=o.ship.method==='retiro'?['Pagado','Preparando','Listo para retiro','Entregado']:['Pagado','Preparando','Enviado','Entregado'];
+  if(o.status==='Cancelado')return '<div class="msg bad">Pedido cancelado.</div>';
+  const idx=flow.indexOf(o.status);return `<div class="steps">${flow.map((s,i)=>`<div class="${i<=idx?'done':''}">${s}</div>`).join('')}</div>`;
+}
+function orderBox(o){return `<div class="box"><div class="bar" style="margin-top:0"><h3 style="margin:0">Pedido ${esc(o.num)}</h3><span class="pill ok">${esc(o.pay.status)}</span><span style="flex:1"></span><span class="small">${fdate(o.date)}</span></div>${timeline(o)}${o.items.map(i=>`<div class="r" style="display:flex;justify-content:space-between"><span>${i.qty}× ${esc(i.name)}</span><span>${CLP(i.price*i.qty)}</span></div>`).join('')}<div class="r t" style="display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:8px;padding-top:8px"><b>Total</b><b>${CLP(o.total)}</b></div><p class="small">${o.ship.method==='retiro'?'Retiro en tienda':`Despacho a ${esc(o.ship.address)}, ${esc(o.ship.comuna)}, ${esc(o.ship.region)}`} · Pago: ${esc(o.pay.method)} (ref. ${esc(o.pay.ref)})</p></div>`}
+function viewOrder(num){
+  const o=S.orders.find(x=>x.num===num);if(!o)return `<div class="wrap empty"><h2>Pedido no encontrado</h2></div>`;
+  document.title='Pedido '+num;
+  return `<div class="wrap"><div class="empty" style="padding-bottom:10px"><div style="font-size:54px">🎉</div><h1>¡Gracias por tu compra, ${esc(o.customer.name.split(' ')[0])}!</h1><p>Tu número de pedido es <b style="color:var(--gold);font-size:22px">${esc(o.num)}</b>. Enviamos el detalle a ${esc(o.customer.email)} (simulado).</p></div>${orderBox(o)}<div class="bar" style="justify-content:center"><a class="btn" href="#tienda-todo">Seguir comprando</a><a class="btn alt" href="#seguimiento">Seguimiento</a></div></div>`;
+}
+function viewTrack(){
+  document.title='Seguimiento de pedido';
+  return `<div class="wrap"><div class="crumbs"><a href="#inicio">Inicio</a> / Seguimiento</div><h1>Seguimiento de pedido</h1><form data-form="track" class="box mt" style="max-width:520px"><div class="fld"><label>N° de pedido</label><input name="num" placeholder="KG-10001" required></div><div class="fld mt"><label>Correo usado en la compra</label><input name="email" type="email" required></div><button class="btn mt">Consultar</button></form><div id="trk" class="mt"></div></div>`;
+}
+function viewEvents(){document.title='Eventos y torneos';return `<div class="wrap"><div class="crumbs"><a href="#inicio">Inicio</a> / Eventos</div><h1>Eventos y torneos</h1><p class="small">Inscripciones en tienda o por mensaje directo. Fechas de demostración.</p><div class="evs mt">${EVENTS.map(evCard).join('')}</div></div>`}
+function viewInfo(){document.title='Envíos y pagos';return `<div class="wrap"><div class="crumbs"><a href="#inicio">Inicio</a> / Envíos y pagos</div><h1>Envíos y medios de pago</h1><div class="mt">${infoBoxes()}</div></div>`}
+
+/* --- Cuenta --- */
+let ACC='pedidos',AUTH='login';
+function viewAccount(){
+  document.title='Mi cuenta · King of Gamers TCG';const u=me();
+  if(!u){
+    const f={login:`<form data-form="login"><div class="fld"><label>Correo</label><input name="email" type="email" required></div><div class="fld mt"><label>Contraseña</label><input name="pass" type="password" required></div><button class="btn mt">Ingresar</button><p class="small"><a href="#" data-act="auth" data-t="recover" style="color:var(--cyan)">¿Olvidaste tu contraseña?</a></p></form>`,
+    register:`<form data-form="register"><div class="fld"><label>Nombre completo</label><input name="name" required></div><div class="fld mt"><label>Correo</label><input name="email" type="email" required></div><div class="fld mt"><label>Contraseña (mín. 6 caracteres)</label><input name="pass" type="password" minlength="6" required></div><button class="btn mt">Crear cuenta</button></form>`,
+    recover:`<form data-form="recover"><p class="small">Ingresa tu correo. En producción te enviaríamos un enlace; en esta demo puedes definir la nueva clave directamente.</p><div class="fld"><label>Correo</label><input name="email" type="email" required></div><div class="fld mt"><label>Nueva contraseña</label><input name="pass" type="password" minlength="6" required></div><button class="btn mt">Restablecer</button></form>`}[AUTH];
+    return `<div class="wrap" style="max-width:520px"><h1 style="margin-top:20px">Mi cuenta</h1><div class="tabs"><button class="${AUTH==='login'?'on':''}" data-act="auth" data-t="login">Ingresar</button><button class="${AUTH==='register'?'on':''}" data-act="auth" data-t="register">Crear cuenta</button></div><div class="box"><div id="authMsg"></div>${f}</div></div>`;
+  }
+  const mine=S.orders.filter(o=>o.userId===u.id);
+  const tabs=[['pedidos','Mis pedidos'],['favs','Favoritos'],['dir','Direcciones'],['perfil','Perfil']];
+  let body='';
+  if(ACC==='pedidos')body=mine.length?mine.map(orderBox).join('<div style="height:12px"></div>'):'<div class="empty">Aún no tienes pedidos.</div>';
+  if(ACC==='favs'){const L=u.favs.map(prod).filter(Boolean);body=L.length?`<div class="grid">${L.map(card).join('')}</div>`:'<div class="empty">Aún no tienes favoritos. Toca el ♥ en un producto.</div>'}
+  if(ACC==='dir')body=`${u.addrs.map((a,i)=>`<div class="box" style="margin-bottom:10px;display:flex;justify-content:space-between;gap:10px"><span>${esc(a.address)}, ${esc(a.comuna)}</span><button class="btn ghost sm" data-act="addr-del" data-i="${i}">Eliminar</button></div>`).join('')||'<p class="small">Sin direcciones guardadas.</p>'}<form data-form="addr" class="box mt form2"><div class="fld full"><label>Nueva dirección</label><input name="address" required placeholder="Calle, número, depto"></div><div class="fld"><label>Comuna</label><input name="comuna" required></div><div class="fld" style="align-self:end"><button class="btn">Guardar</button></div></form>`;
+  if(ACC==='perfil')body=`<div class="box"><p><b>${esc(u.name)}</b><br>${esc(u.email)}</p><button class="btn alt" data-act="logout">Cerrar sesión</button></div>`;
+  return `<div class="wrap"><h1 style="margin-top:20px">Hola, ${esc(u.name.split(' ')[0])}</h1><div class="tabs">${tabs.map(t=>`<button class="${ACC===t[0]?'on':''}" data-act="acc" data-t="${t[0]}">${t[1]}</button>`).join('')}</div>${body}</div>`;
+}
+
+/* ============ Panel administrativo ============ */
+const ADMIN_PASS='kingadmin';let adminOk=false,AT='resumen',AQ='';
+const ATABS=[['resumen','Resumen'],['productos','Productos'],['inventario','Inventario'],['pedidos','Pedidos'],['clientes','Clientes'],['descuentos','Descuentos'],['preventas','Preventas'],['importar','Importar']];
+const paidOrders=()=>S.orders.filter(o=>o.status!=='Cancelado');
+function viewAdmin(){
+  document.title='Admin · King of Gamers TCG';
+  if(!adminOk)return `<div class="wrap" style="max-width:440px"><h1 style="margin-top:30px">Panel administrativo</h1><form class="box mt" data-form="adminlogin"><div id="admMsg"></div><div class="fld"><label>Clave de administrador</label><input name="pass" type="password" required autofocus></div><button class="btn mt">Entrar</button><p class="small">Demo: la clave es <b>${ADMIN_PASS}</b>. Esta protección funciona solo en el navegador; en producción el panel requiere autenticación en el servidor.</p></form></div>`;
+  const body={resumen:admSummary,productos:admProducts,inventario:admStock,pedidos:admOrders,clientes:admClients,descuentos:admDisc,preventas:admPre,importar:admImport}[AT]();
+  return `<div class="wrap"><div class="bar"><h1>Panel administrativo</h1><span style="flex:1"></span><button class="btn ghost sm" data-act="admout">Salir</button></div><div class="tabs">${ATABS.map(t=>`<button class="${AT===t[0]?'on':''}" data-act="atab" data-t="${t[0]}">${t[1]}</button>`).join('')}</div>${body}</div>`;
+}
+function bars(items,fmt=CLP){const m=Math.max(1,...items.map(i=>i[1]));return items.length?items.map(i=>`<div class="hbar"><span>${esc(i[0])}</span><i style="width:${Math.max(2,i[1]/m*100)}%"></i><b class="right">${fmt(i[1])}</b></div>`).join(''):'<p class="small">Sin ventas registradas todavía.</p>'}
+function admSummary(){
+  const O=paidOrders(),tot=O.reduce((s,o)=>s+o.total,0),low=S.products.filter(p=>p.stock<=3&&!p.preorder);
+  const byG={},byP={};O.forEach(o=>o.items.forEach(i=>{byG[i.game]=(byG[i.game]||0)+i.price*i.qty;byP[i.name]=(byP[i.name]||0)+i.qty}));
+  const days=[...Array(7)].map((_,k)=>{const d=new Date();d.setDate(d.getDate()-6+k);const key=d.toDateString();return [d.toLocaleDateString('es-CL',{weekday:'short',day:'numeric'}),O.filter(o=>new Date(o.date).toDateString()===key).reduce((s,o)=>s+o.total,0)]});
+  return `<div class="kpis"><div class="kpi"><small>Ventas totales</small><b>${CLP(tot)}</b></div><div class="kpi"><small>Pedidos</small><b>${O.length}</b></div><div class="kpi"><small>Ticket promedio</small><b>${CLP(O.length?tot/O.length:0)}</b></div><div class="kpi"><small>Stock bajo (≤3)</small><b>${low.length}</b></div><div class="kpi"><small>Productos</small><b>${S.products.length}</b></div></div>
+  <div class="info3"><div class="box"><h3>Ventas últimos 7 días</h3>${bars(days)}</div><div class="box"><h3>Ventas por juego</h3>${bars(Object.entries(byG).map(([k,v])=>[(GAMES[k]||{}).name||k,v]))}</div><div class="box"><h3>Más vendidos (unidades)</h3>${bars(Object.entries(byP).sort((a,b)=>b[1]-a[1]).slice(0,6),v=>v+' u.')}</div></div>
+  ${low.length?`<div class="box mt"><h3>⚠ Stock bajo</h3>${low.map(p=>`<span class="chip" style="margin:3px">${esc(p.name)} · ${p.stock}</span>`).join('')}</div>`:''}`;
+}
+function admProducts(){
+  const q=norm(AQ),L=S.products.filter(p=>!q||norm(p.name+p.set+p.setCode).includes(q));
+  return `<div class="bar"><input class="in-s" style="max-width:300px" id="admQ" placeholder="Buscar producto…" value="${esc(AQ)}"><button class="btn sm" data-act="prod-new">+ Nuevo producto</button><span class="small">${L.length} de ${S.products.length}</span></div><div class="tw"><table class="tbl"><thead><tr><th></th><th>Producto</th><th>Juego</th><th>Categoría</th><th>Precio</th><th>Stock</th><th></th></tr></thead><tbody>${L.map(p=>`<tr><td><div style="width:38px;height:44px">${art(p)}</div></td><td><b>${esc(p.name)}</b><br><span class="small">${esc(p.set)} ${esc(p.rarity)}</span></td><td>${esc((GAMES[p.game]||{}).name)}</td><td>${esc(CATS[p.category])}</td><td><input class="mini" type="number" min="0" value="${p.price}" data-chg="price" data-id="${esc(p.id)}"></td><td>${p.stock}</td><td style="white-space:nowrap"><button class="btn alt sm" data-act="prod-edit" data-id="${esc(p.id)}">Editar</button> <button class="btn danger sm" data-act="prod-del" data-id="${esc(p.id)}">Eliminar</button></td></tr>`).join('')}</tbody></table></div>`;
+}
+function admStock(){
+  return `<div class="tw"><table class="tbl"><thead><tr><th>Producto</th><th>Stock</th><th>Cantidad</th><th>Nota</th><th></th></tr></thead><tbody>${S.products.map(p=>`<tr data-pid="${esc(p.id)}"><td>${esc(p.name)}</td><td><span class="pill ${p.stock<=0?'bad':p.stock<=3?'warn':'ok'}">${p.stock}</span></td><td><input class="mini" type="number" min="1" value="1" data-f="q" style="width:70px"></td><td><input class="mini" data-f="n" placeholder="Motivo" style="width:150px"></td><td style="white-space:nowrap"><button class="btn sm" data-act="st-in" data-id="${esc(p.id)}">+ Entrada</button> <button class="btn alt sm" data-act="st-out" data-id="${esc(p.id)}">− Salida</button></td></tr>`).join('')}</tbody></table></div>
+  <h3 class="mt" style="margin-bottom:8px">Últimos movimientos</h3><div class="tw"><table class="tbl"><thead><tr><th>Fecha</th><th>Producto</th><th>Movimiento</th><th>Nota</th></tr></thead><tbody>${S.movements.slice(0,25).map(m=>`<tr><td>${fdate(m.date)}</td><td>${esc(m.name)}</td><td><span class="pill ${m.qty>0?'ok':'warn'}">${m.qty>0?'+':''}${m.qty}</span></td><td>${esc(m.note)}</td></tr>`).join('')||'<tr><td colspan="4" class="small">Sin movimientos.</td></tr>'}</tbody></table></div>`;
+}
+function admOrders(){
+  return S.orders.length?`<div class="tw"><table class="tbl"><thead><tr><th>Pedido</th><th>Fecha</th><th>Cliente</th><th>Total</th><th>Pago</th><th>Estado</th><th></th></tr></thead><tbody>${S.orders.map(o=>`<tr><td><b>${esc(o.num)}</b></td><td>${fdate(o.date)}</td><td>${esc(o.customer.name)}<br><span class="small">${esc(o.customer.email)}</span></td><td>${CLP(o.total)}</td><td>${esc(o.pay.method)}</td><td><select class="mini" data-chg="ostatus" data-id="${esc(o.num)}">${ORDER_STATES.map(s=>`<option ${s===o.status?'selected':''}>${s}</option>`).join('')}</select></td><td><button class="btn alt sm" data-act="ord-det" data-id="${esc(o.num)}">Detalle</button></td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">Aún no hay pedidos. Haz una compra de prueba en la tienda para verla aquí.</div>';
+}
+function admClients(){
+  return S.users.length?`<div class="tw"><table class="tbl"><thead><tr><th>Cliente</th><th>Correo</th><th>Pedidos</th><th>Total comprado</th></tr></thead><tbody>${S.users.map(u=>{const o=S.orders.filter(x=>x.userId===u.id&&x.status!=='Cancelado');return `<tr><td>${esc(u.name)}</td><td>${esc(u.email)}</td><td>${o.length}</td><td>${CLP(o.reduce((s,x)=>s+x.total,0))}</td></tr>`}).join('')}</tbody></table></div>`:'<div class="empty">Aún no hay clientes registrados.</div>';
+}
+function admDisc(){
+  return `<div class="tw"><table class="tbl"><thead><tr><th>Código</th><th>Descuento</th><th>Compra mínima</th><th>Usos</th><th>Estado</th><th></th></tr></thead><tbody>${S.discounts.map(d=>`<tr><td><b>${esc(d.code)}</b></td><td>${d.type==='pct'?d.value+'%':CLP(d.value)}</td><td>${CLP(d.min)}</td><td>${d.uses}</td><td><span class="pill ${d.active?'ok':'bad'}">${d.active?'Activo':'Inactivo'}</span></td><td style="white-space:nowrap"><button class="btn alt sm" data-act="disc-t" data-id="${esc(d.code)}">${d.active?'Desactivar':'Activar'}</button> <button class="btn danger sm" data-act="disc-d" data-id="${esc(d.code)}">Eliminar</button></td></tr>`).join('')}</tbody></table></div>
+  <form data-form="disc" class="box mt form2"><div class="fld"><label>Código</label><input name="code" required placeholder="NAVIDAD15"></div><div class="fld"><label>Tipo</label><select name="type"><option value="pct">Porcentaje (%)</option><option value="fix">Monto fijo ($)</option></select></div><div class="fld"><label>Valor</label><input name="value" type="number" min="1" required></div><div class="fld"><label>Compra mínima ($)</label><input name="min" type="number" min="0" value="0"></div><div class="full"><button class="btn">Crear código</button></div></form>`;
+}
+function admPre(){
+  const L=S.products.filter(p=>p.preorder);
+  return L.length?`<div class="tw"><table class="tbl"><thead><tr><th>Preventa</th><th>Lanzamiento</th><th>Cupos</th><th>Precio</th><th></th></tr></thead><tbody>${L.map(p=>`<tr><td>${esc(p.name)}</td><td>${esc(p.releaseDate||'—')}</td><td>${p.stock}</td><td>${CLP(p.price)}</td><td style="white-space:nowrap"><button class="btn alt sm" data-act="prod-edit" data-id="${esc(p.id)}">Editar</button> <button class="btn sm" data-act="launch" data-id="${esc(p.id)}">Lanzar a venta</button></td></tr>`).join('')}</tbody></table></div><p class="small mt">Para crear una preventa: nuevo producto → marca “Es preventa” y define la fecha.</p>`:'<div class="empty">No hay preventas activas.</div>';
+}
+const TPL='nombre,juego,categoria,expansion,codigo,rareza,idioma,numero,tipocarta,precio,precioanterior,stock,descripcion\nCharizard ex,pokemon,cartas,Obsidian Flames,OBF,Ultra rara,Inglés,125/197,Pokémon,24990,29990,3,Near Mint';
+function admImport(){
+  return `<div class="box"><h3>Importar catálogo (CSV o Excel)</h3><p class="small">Columnas: <code>${TPL.split('\n')[0]}</code>. Juego: pokemon, magic, yugioh, onepiece u otros. Categoría: ${Object.keys(CATS).join(', ')}. Si el producto ya existe (nombre + código + idioma + número) se actualiza precio y stock; si no, se crea.</p><div class="bar"><input type="file" id="impFile" accept=".csv,.xlsx,.xls,.txt"><button class="btn alt sm" data-act="tpl">Copiar plantilla</button></div><div class="fld"><label>O pega aquí el contenido CSV</label><textarea id="impTxt" rows="6" placeholder="${esc(TPL)}"></textarea></div><div id="impMsg"></div><button class="btn mt" data-act="imp-run">Importar</button></div>`;
+}
+const GKEYS={pokemon:'pokemon',magic:'magic',yugioh:'yugioh',onepiece:'onepiece'};
+function normGame(v){const n=norm(v).replace(/[^a-z]/g,'');for(const k in GKEYS)if(n.includes(k))return k;return 'otros'}
+function normCat(v){const n=norm(v);for(const k in CATS)if(n===k||norm(CATS[k])===n)return k;if(n.includes('individual')||n.includes('carta'))return 'cartas';if(n.includes('sobre')||n.includes('booster pack'))return 'sobres';if(n.includes('box'))return 'boosterbox';if(n.includes('elite')||n.includes('etb'))return 'etb';if(n.includes('protec')||n.includes('carpeta'))return 'protectores';if(n.includes('acces'))return 'accesorios';return 'colecciones'}
+function parseCSV(t){const rows=[];let r=[],f='',q=false;for(let i=0;i<t.length;i++){const c=t[i];if(q){if(c==='"'){if(t[i+1]==='"'){f+='"';i++}else q=false}else f+=c}else if(c==='"')q=true;else if(c===','||c===';'){r.push(f);f=''}else if(c==='\n'){r.push(f);rows.push(r);r=[];f=''}else if(c!=='\r')f+=c}if(f!==''||r.length){r.push(f);rows.push(r)}return rows.filter(x=>x.some(v=>v.trim()!==''))}
+function importCSV(text){
+  const R=parseCSV(text.replace(/^﻿/,''));if(R.length<2)return {err:'No hay filas para importar.'};
+  const H=R[0].map(h=>norm(h).replace(/[^a-z]/g,'')),col=(...n)=>H.findIndex(h=>n.includes(h));
+  const ix={name:col('nombre','name'),game:col('juego','game'),cat:col('categoria','category'),set:col('expansion','set'),code:col('codigo','setcode'),rar:col('rareza','rarity'),lang:col('idioma','lang'),num:col('numero','number'),ct:col('tipocarta','cardtype'),price:col('precio','price'),old:col('precioanterior','oldprice'),stock:col('stock'),desc:col('descripcion','desc')};
+  if(ix.name<0||ix.price<0)return {err:'Faltan las columnas obligatorias "nombre" y "precio".'};
+  let add=0,upd=0,skip=0;const g=(r,i)=>i>=0?(r[i]||'').trim():'';
+  R.slice(1).forEach(r=>{
+    const name=g(r,ix.name),price=parseInt(g(r,ix.price).replace(/[^\d]/g,''),10);if(!name||isNaN(price)){skip++;return}
+    const cat=ix.cat>=0&&g(r,ix.cat)?normCat(g(r,ix.cat)):'cartas',game=normGame(g(r,ix.game)),stock=Math.max(0,parseInt(g(r,ix.stock),10)||0);
+    const lang=g(r,ix.lang)||'Español',code=g(r,ix.code),num=g(r,ix.num),old=parseInt(g(r,ix.old).replace(/[^\d]/g,''),10)||0;
+    const ex=S.products.find(p=>norm(p.name)===norm(name)&&norm(p.setCode)===norm(code)&&norm(p.lang)===norm(lang)&&norm(p.number)===norm(num));
+    if(ex){ex.price=price;ex.oldPrice=old;const d=stock-ex.stock;if(d){S.movements.unshift({id:uid(),date:new Date().toISOString(),pid:ex.id,name:ex.name,qty:d,note:'Importación'});}ex.stock=stock;upd++}
+    else{const p=mk(uid(),name,game,cat,g(r,ix.set)||'—',code,g(r,ix.rar),lang,num,g(r,ix.ct),price,old,stock,0,{desc:g(r,ix.desc)});p.id='p'+uid();S.products.push(p);if(stock)S.movements.unshift({id:uid(),date:new Date().toISOString(),pid:p.id,name:p.name,qty:stock,note:'Carga inicial'});add++}
+  });
+  save();return {add,upd,skip};
+}
+function loadXLSX(){return new Promise((res,rej)=>{if(window.XLSX)return res();const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';s.onload=res;s.onerror=()=>rej(new Error('No se pudo cargar el lector de Excel'));document.head.appendChild(s)})}
+
+/* Editor de producto */
+function prodForm(p){
+  p=p||{id:'',name:'',game:'pokemon',category:'cartas',set:'',setCode:'',rarity:'',lang:'Español',number:'',cardType:'',price:'',oldPrice:0,stock:0,desc:'',preorder:false,releaseDate:'',featured:false,isNew:false,image:''};
+  const sel=(n,o,c)=>`<select name="${n}">${o.map(([v,l])=>`<option value="${esc(v)}" ${v===c?'selected':''}>${esc(l)}</option>`).join('')}</select>`;
+  modal(`<h2>${p.id?'Editar':'Nuevo'} producto</h2><form data-form="prod" data-id="${esc(p.id)}" class="form2"><div class="fld full"><label>Nombre</label><input name="name" required value="${esc(p.name)}"></div><div class="fld"><label>Juego</label>${sel('game',Object.entries(GAMES).map(([k,g])=>[k,g.name]),p.game)}</div><div class="fld"><label>Categoría</label>${sel('category',Object.entries(CATS),p.category)}</div><div class="fld"><label>Expansión</label><input name="set" value="${esc(p.set)}"></div><div class="fld"><label>Código expansión</label><input name="setCode" value="${esc(p.setCode)}"></div><div class="fld"><label>Rareza</label>${sel('rarity',[['','—'],...RAR.map(r=>[r,r])],p.rarity)}</div><div class="fld"><label>Idioma</label>${sel('lang',[...LANGS,'—'].map(l=>[l,l]),p.lang)}</div><div class="fld"><label>N° de carta</label><input name="number" value="${esc(p.number)}"></div><div class="fld"><label>Tipo de carta</label><input name="cardType" value="${esc(p.cardType)}"></div><div class="fld"><label>Precio (CLP)</label><input name="price" type="number" min="0" required value="${esc(p.price)}"></div><div class="fld"><label>Precio anterior (opcional)</label><input name="oldPrice" type="number" min="0" value="${esc(p.oldPrice||'')}"></div><div class="fld"><label>Stock</label><input name="stock" type="number" min="0" required value="${esc(p.stock)}"></div><div class="fld"><label>Fecha lanzamiento (preventa)</label><input name="releaseDate" type="date" value="${esc(p.releaseDate)}"></div><div class="fld full"><label>Descripción</label><textarea name="desc" rows="3">${esc(p.desc)}</textarea></div><div class="fld full"><label>Fotografía (opcional)</label><input name="img" type="file" accept="image/*"></div><label class="chip"><input type="checkbox" name="preorder" ${p.preorder?'checked':''}> Es preventa</label><label class="chip"><input type="checkbox" name="featured" ${p.featured?'checked':''}> Destacado</label><label class="chip"><input type="checkbox" name="isNew" ${p.isNew?'checked':''}> Nuevo</label><div class="acts full"><button type="button" class="btn ghost" data-act="modal-close">Cancelar</button><button class="btn">Guardar</button></div></form>`);
+}
+function fileToDataURL(file,max=560){return new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.8))};im.onerror=rej;im.src=fr.result};fr.onerror=rej;fr.readAsDataURL(file)})}
+function stockMove(id,qty,note){const p=prod(id);if(!p)return false;if(p.stock+qty<0){toast('No puedes dejar el stock en negativo');return false}p.stock+=qty;S.movements.unshift({id:uid(),date:new Date().toISOString(),pid:id,name:p.name,qty,note:note||(qty>0?'Entrada manual':'Salida manual')});save();return true}
+
+/* ============ Router ============ */
+const NAV=[['inicio','Inicio'],['tienda-pokemon','Pokémon'],['tienda-magic','Magic'],['tienda-yugioh','Yu-Gi-Oh!'],['tienda-onepiece','One Piece'],['tienda-otros','Otros juegos'],['cartas','Cartas individuales'],['tienda-sobres','Sobres'],['tienda-boosterbox','Booster boxes'],['tienda-etb','Elite Trainer Box'],['tienda-colecciones','Colecciones'],['tienda-accesorios','Accesorios'],['tienda-protectores','Protectores y carpetas'],['tienda-preventas','Preventas','hot'],['tienda-ofertas','Ofertas','hot'],['eventos','Eventos']];
+const cur=()=>location.hash.slice(1)||'inicio';
+function go(h){if(cur()===h)render();else location.hash=h}
+function render(){
+  clearInterval(heroT);closeModal();const r=cur();let html;
+  $('#nav').innerHTML=NAV.map(n=>`<a href="#${n[0]}" class="${r===n[0]?'on':''} ${n[2]||''}">${n[1]}</a>`).join('');
+  if(r==='inicio')html=viewHome();
+  else if(r.startsWith('tienda-'))html=viewShop(r.slice(7));
+  else if(r==='cartas')html=viewSearch();
+  else if(r.startsWith('producto-'))html=viewProduct(r.slice(9));
+  else if(r==='carrito')html=viewCart();
+  else if(r==='checkout')html=viewCheckout();
+  else if(r.startsWith('pedido-'))html=viewOrder(r.slice(7));
+  else if(r==='seguimiento')html=viewTrack();
+  else if(r==='cuenta')html=viewAccount();
+  else if(r==='eventos')html=viewEvents();
+  else if(r==='envios')html=viewInfo();
+  else if(r==='admin')html=viewAdmin();
+  else html=viewHome();
+  if(r==='inicio')document.title='King of Gamers TCG · El imperio del juego';
+  $('#app').innerHTML=html;badge();
+  if(r==='inicio')startHero();
+  if(r==='cartas'){sfFill();sfRun()}
+  if(!r.startsWith('producto-'))PQ=1;
+  if(!(r==='carrito'||r==='checkout')){}
+}
+function rerender(){const y=window.scrollY;render();window.scrollTo(0,y)}
+window.addEventListener('hashchange',()=>{render();window.scrollTo(0,0)});
+
+/* ============ Eventos de interfaz ============ */
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-act]');if(!t)return;const a=t.dataset.act,id=t.dataset.id;
+  if(t.tagName==='A'&&t.getAttribute('href')==='#')e.preventDefault();
+  switch(a){
+    case'add':addToCart(id,1);break;
+    case'add-q':addToCart(id,PQ);break;
+    case'pq':{const p=prod(cur().slice(9));PQ=Math.max(1,Math.min(Math.max(p.stock,1),PQ+Number(t.dataset.d)));$('#pq').textContent=PQ;break}
+    case'fav':{const u=me();if(!u){toast('Ingresa a tu cuenta para guardar favoritos');go('cuenta');break}const i=u.favs.indexOf(id);if(i>=0)u.favs.splice(i,1);else u.favs.push(id);save();rerender();break}
+    case'slide':{const h=$('#hero');if(h&&h._go){h._go(Number(t.dataset.i));clearInterval(heroT)}break}
+    case'clearq':SQ='';rerender();break;
+    case'sf-reset':SF={game:'',q:'',set:'',code:'',num:'',rar:'',lang:'',type:'',min:'',max:'',avail:'',sort:'rel'};sfFill();sfRun();break;
+    case'cq':{const c=S.cart.find(x=>x.id===id),p=prod(id);if(!c||!p)break;const nq=c.qty+Number(t.dataset.d);if(nq<=0)S.cart=S.cart.filter(x=>x.id!==id);else if(nq>p.stock){toast('No hay más stock disponible');break}else c.qty=nq;save();rerender();break}
+    case'crm':S.cart=S.cart.filter(x=>x.id!==id);save();rerender();break;
+    case'code':S.cartCode=($('#codeIn').value||'').trim().toUpperCase();save();rerender();break;
+    case'pay-ok':finishPayment(true);break;
+    case'pay-no':finishPayment(false);break;
+    case'modal-close':closeModal();break;
+    case'auth':e.preventDefault();AUTH=t.dataset.t;rerender();break;
+    case'acc':ACC=t.dataset.t;rerender();break;
+    case'logout':S.session=null;save();rerender();break;
+    case'addr-del':{const u=me();u.addrs.splice(Number(t.dataset.i),1);save();rerender();break}
+    case'atab':AT=t.dataset.t;rerender();break;
+    case'admout':adminOk=false;rerender();break;
+    case'prod-new':prodForm();break;
+    case'prod-edit':prodForm(prod(id));break;
+    case'prod-del':{const p=prod(id);modal(`<h2>Eliminar producto</h2><p>¿Seguro que quieres eliminar <b>${esc(p.name)}</b>? Esta acción no se puede deshacer.</p><div class="acts"><button class="btn ghost" data-act="modal-close">Cancelar</button><button class="btn danger" data-act="prod-del-ok" data-id="${esc(id)}">Eliminar</button></div>`);break}
+    case'prod-del-ok':S.products=S.products.filter(p=>p.id!==id);S.cart=S.cart.filter(c=>c.id!==id);save();closeModal();rerender();toast('Producto eliminado');break;
+    case'st-in':case'st-out':{const tr=t.closest('tr'),q=Math.max(1,parseInt($('[data-f=q]',tr).value,10)||1),n=$('[data-f=n]',tr).value.trim();if(stockMove(id,a==='st-in'?q:-q,n)){rerender();toast('Inventario actualizado')}break}
+    case'ord-det':{const o=S.orders.find(x=>x.num===id);modal(`${orderBox(o)}<p class="small mt">Cliente: ${esc(o.customer.name)} · ${esc(o.customer.email)} · ${esc(o.customer.phone)} ${o.customer.rut?'· RUT '+esc(o.customer.rut):''}</p><div class="acts"><button class="btn" data-act="modal-close">Cerrar</button></div>`);break}
+    case'disc-t':{const d=S.discounts.find(x=>x.code===id);d.active=!d.active;save();rerender();break}
+    case'disc-d':S.discounts=S.discounts.filter(x=>x.code!==id);save();rerender();break;
+    case'launch':{const p=prod(id);p.preorder=false;p.isNew=true;save();rerender();toast('Producto lanzado a venta');break}
+    case'tpl':navigator.clipboard.writeText(TPL).then(()=>toast('Plantilla copiada')).catch(()=>toast('No se pudo copiar; selecciona el texto manualmente'));break;
+    case'imp-run':runImport();break;
+  }
+});
+async function runImport(){
+  const msg=$('#impMsg'),file=$('#impFile').files[0];let text=$('#impTxt').value;
+  try{
+    if(file){
+      if(/\.xlsx?$/i.test(file.name)){await loadXLSX();const buf=await file.arrayBuffer(),wb=XLSX.read(buf,{type:'array'});text=XLSX.utils.sheet_to_csv(wb.Sheets[wb.SheetNames[0]])}
+      else text=await file.text();
+    }
+    if(!text.trim()){msg.innerHTML='<div class="msg bad">Selecciona un archivo o pega contenido CSV.</div>';return}
+    const r=importCSV(text);
+    msg.innerHTML=r.err?`<div class="msg bad">${esc(r.err)}</div>`:`<div class="msg ok">Importación lista: ${r.add} nuevos, ${r.upd} actualizados, ${r.skip} omitidos.</div>`;
+  }catch(err){msg.innerHTML=`<div class="msg bad">${esc(err.message||'No se pudo leer el archivo')}</div>`}
+}
+document.addEventListener('change',async e=>{
+  const t=e.target,k=t.dataset&&t.dataset.chg;
+  if(k==='sort'){SORT=t.value;rerender()}
+  else if(k==='shipm'){S.ship.method=t.value;save();rerender()}
+  else if(k==='region'){S.ship.region=t.value;save();rerender()}
+  else if(k==='price'){const p=prod(t.dataset.id),v=parseInt(t.value,10);if(p&&v>=0){p.price=v;save();toast('Precio actualizado')}}
+  else if(k==='ostatus'){const o=S.orders.find(x=>x.num===t.dataset.id),ns=t.value;if(!o)return;
+    if(ns==='Cancelado'&&o.status!=='Cancelado')o.items.forEach(i=>{const p=prod(i.id);if(p){p.stock+=i.qty;S.movements.unshift({id:uid(),date:new Date().toISOString(),pid:p.id,name:p.name,qty:i.qty,note:'Cancelación '+o.num})}});
+    o.status=ns;save();toast('Estado actualizado')}
+  else if(t.id==='ssort'){SF.sort=t.value;sfRun()}
+});
+document.addEventListener('input',e=>{
+  const f=e.target.closest('#sf');
+  if(f){const n=e.target.name;SF[n]=e.target.value;if(n==='game'){sfFill()}sfRun();return}
+  if(e.target.id==='admQ'){AQ=e.target.value;const pos=e.target.selectionStart;rerender();const i=$('#admQ');if(i){i.focus();i.setSelectionRange(pos,pos)}}
+});
+$('#qs').addEventListener('submit',e=>{e.preventDefault();SQ=$('#qsi').value.trim();go('tienda-todo')});
+
+document.addEventListener('submit',async e=>{
+  const f=e.target,k=f.dataset&&f.dataset.form;if(!k)return;e.preventDefault();const d=new FormData(f);
+  const say=(id,cls,m)=>{const x=$('#'+id);if(x)x.innerHTML=`<div class="msg ${cls}">${esc(m)}</div>`};
+  if(k==='checkout')startPayment(f);
+  else if(k==='login'){const u=S.users.find(x=>x.email===d.get('email').trim().toLowerCase());if(!u||u.hash!==await sha(d.get('pass')))return say('authMsg','bad','Correo o contraseña incorrectos.');S.session=u.id;save();rerender()}
+  else if(k==='register'){const em=d.get('email').trim().toLowerCase();if(S.users.some(x=>x.email===em))return say('authMsg','bad','Ya existe una cuenta con ese correo.');const u={id:uid(),name:d.get('name').trim(),email:em,hash:await sha(d.get('pass')),favs:[],addrs:[],phone:''};S.users.push(u);S.session=u.id;save();rerender();toast('¡Cuenta creada!')}
+  else if(k==='recover'){const u=S.users.find(x=>x.email===d.get('email').trim().toLowerCase());if(!u)return say('authMsg','bad','No encontramos una cuenta con ese correo.');u.hash=await sha(d.get('pass'));save();AUTH='login';rerender();toast('Contraseña actualizada. Ya puedes ingresar.')}
+  else if(k==='addr'){const u=me();u.addrs.push({address:d.get('address').trim(),comuna:d.get('comuna').trim()});save();rerender()}
+  else if(k==='track'){const o=S.orders.find(x=>x.num.toLowerCase()===d.get('num').trim().toLowerCase()&&x.customer.email.toLowerCase()===d.get('email').trim().toLowerCase());$('#trk').innerHTML=o?orderBox(o):'<div class="msg bad">No encontramos un pedido con esos datos.</div>'}
+  else if(k==='adminlogin'){if(d.get('pass')===ADMIN_PASS){adminOk=true;rerender()}else say('admMsg','bad','Clave incorrecta.')}
+  else if(k==='disc'){const code=d.get('code').trim().toUpperCase().replace(/[^A-Z0-9]/g,'');if(!code)return;if(S.discounts.some(x=>x.code===code))return toast('Ese código ya existe');S.discounts.push({code,type:d.get('type'),value:Number(d.get('value')),min:Number(d.get('min'))||0,active:true,uses:0});save();rerender()}
+  else if(k==='prod'){
+    const id=f.dataset.id,old=id?prod(id):null,price=parseInt(d.get('price'),10),stock=parseInt(d.get('stock'),10);
+    if(!d.get('name').trim()||isNaN(price)||price<0||isNaN(stock)||stock<0)return toast('Revisa nombre, precio y stock');
+    const cat=d.get('category'),p=old||{id:'p'+uid(),sold:0,image:''};
+    Object.assign(p,{name:d.get('name').trim(),game:d.get('game'),category:cat,type:cat==='cartas'?'carta':(cat==='accesorios'||cat==='protectores'?'accesorio':'sellado'),set:d.get('set').trim()||'—',setCode:d.get('setCode').trim(),rarity:d.get('rarity'),lang:d.get('lang'),number:d.get('number').trim(),cardType:d.get('cardType').trim(),price,oldPrice:parseInt(d.get('oldPrice'),10)||0,desc:d.get('desc').trim(),preorder:d.get('preorder')==='on',releaseDate:d.get('releaseDate'),featured:d.get('featured')==='on',isNew:d.get('isNew')==='on'});
+    const img=d.get('img');if(img&&img.size){try{p.image=await fileToDataURL(img)}catch(err){toast('No se pudo leer la imagen')}}
+    const diff=old?stock-old.stock:stock;p.stock=stock;if(!old)S.products.push(p);
+    if(diff)S.movements.unshift({id:uid(),date:new Date().toISOString(),pid:p.id,name:p.name,qty:diff,note:old?'Ajuste en edición':'Carga inicial'});
+    save();closeModal();rerender();toast('Producto guardado ✓');
+  }
+});
+
+render();
+</script>
+</body>
+</html>
